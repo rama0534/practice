@@ -10,18 +10,18 @@ public class NewSimpleServlet extends HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request,
                           javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException,
             IOException {
-        PrintWriter writer = response.getWriter();
-        writer.write("This is POST");
-        writer.flush();
-        writer.close();
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        String UserName = request.getParameter("UserName");
+        out.println("Hello from doPost method " + UserName);
     }
 
     protected void doGet(javax.servlet.http.HttpServletRequest request,
                          javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException,
             IOException {
-        System.out.println("do get");
-        response.getWriter().write("Testing");
-        response.getWriter().flush();
-        response.getWriter().close();
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        String UserName = request.getParameter("UserName");
+        out.println("Hello doGet " + UserName);
     }
 }

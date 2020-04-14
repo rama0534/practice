@@ -14,7 +14,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>NewSimpleServlet</servlet-name>
-        <url-pattern>/NewSimpleServlet</url-pattern>
+        <url-pattern>/NewSimpleServletPaths</url-pattern>
     </servlet-mapping>
 
 
