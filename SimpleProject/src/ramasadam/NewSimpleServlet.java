@@ -4,8 +4,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpSession;
 
-//@WebServlet(name = "newSimpleServlet", urlPatterns = "/first")
+//@WebServlet(name = "newSimpleServlet", urlPatterns = "/NewSimpleServletPaths")
 public class NewSimpleServlet extends HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request,
                           javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException,
@@ -32,7 +33,14 @@ public class NewSimpleServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         String userName = request.getParameter("userName");
-        String fullName = request.getParameter("fullName");
-        out.println("Hello doGet " + userName+ "we know your full name"+ fullName);
+        HttpSession session = request.getSession();
+        if(userName != "" && userName != null){
+            session.setAttribute("savedUserName", userName);
+        }
+        out.println("Request parameter has username as "+ userName);
+        out.println("Session parameter has user name as "+ (String) session.getAttribute("savedUserName"));
+
+//        String fullName = request.getParameter("fullName");
+//        out.println("Hello doGet " + userName+ "we know your full name"+ fullName);
     }
 }
