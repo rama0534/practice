@@ -1,7 +1,10 @@
 package ramasadam;
 
+import org.omg.IOP.ServiceContext;
+
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.ServletContext;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpSession;
@@ -34,11 +37,15 @@ public class NewSimpleServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         String userName = request.getParameter("userName");
         HttpSession session = request.getSession();
+        ServletContext context = request.getServletContext();
+
         if(userName != "" && userName != null){
             session.setAttribute("savedUserName", userName);
+            context.setAttribute("savedUserName", userName);
         }
         out.println("Request parameter has username as "+ userName);
         out.println("Session parameter has user name as "+ (String) session.getAttribute("savedUserName"));
+        out.println("Context parameter has user name as "+ (String) context.getAttribute("savedUserName"));
 
 //        String fullName = request.getParameter("fullName");
 //        out.println("Hello doGet " + userName+ "we know your full name"+ fullName);
