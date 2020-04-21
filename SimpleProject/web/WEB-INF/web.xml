@@ -5,11 +5,16 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" >
 <!--    <context-param>-->
 <!--        <param-name>javax.faces.CONFIG_FILES</param-name>-->
-<!--        <param-value>/XmlServl.java.xml</param-value>-->
+<!--        <param-value>/XmlServlet.java.xml</param-value>-->
 <!--    </context-param>-->
 <!--    <servlet>-->
 <!--        <servlet-name>NewSimpleServlet</servlet-name>-->
 <!--        <servlet-class>ramasadam.NewSimpleServlet</servlet-class>-->
+<!--        <init-param>-->
+<!--            <param-name>defaultName</param-name>-->
+<!--            <param-value>Ramaa</param-value>-->
+<!--        </init-param>-->
+
 
 <!--    </servlet>-->
 <!--    <servlet-mapping>-->

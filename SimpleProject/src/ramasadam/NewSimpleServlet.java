@@ -10,7 +10,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpSession;
 
-@WebServlet(name = "newSimpleServlet", urlPatterns = "/NewSimpleServletPaths")
+@WebServlet(name = "newSimpleServlet", urlPatterns = "/NewSimpleServletPaths", initParams = {@WebInitParam(name =
+        "defaultUser", value = "Raamaa")})
 
 public class NewSimpleServlet extends HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request,
@@ -48,7 +49,8 @@ public class NewSimpleServlet extends HttpServlet {
         out.println("Request parameter has username as "+ userName);
         out.println("Session parameter has user name as "+ (String) session.getAttribute("savedUserName"));
         out.println("Context parameter has user name as "+ (String) context.getAttribute("savedUserName"));
-        this.getServletConfig().getInitParameter("defaultUser");
+        out.println("init parameter has default user name as "+ getServletConfig().getInitParameter("defaultUser"));
+
 
 //        String fullName = request.getParameter("fullName");
 //        out.println("Hello doGet " + userName+ "we know your full name"+ fullName);
