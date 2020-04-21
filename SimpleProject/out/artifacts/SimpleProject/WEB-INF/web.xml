@@ -7,15 +7,18 @@
 <!--        <param-name>javax.faces.CONFIG_FILES</param-name>-->
 <!--        <param-value>/XmlServl.java.xml</param-value>-->
 <!--    </context-param>-->
-    <servlet>
-        <servlet-name>NewSimpleServlet</servlet-name>
-        <servlet-class>ramasadam.NewSimpleServlet</servlet-class>
+<!--    <servlet>-->
+<!--        <servlet-name>NewSimpleServlet</servlet-name>-->
+<!--        <servlet-class>ramasadam.NewSimpleServlet</servlet-class>-->
 
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>NewSimpleServlet</servlet-name>
-        <url-pattern>/NewSimpleServletPaths</url-pattern>
-    </servlet-mapping>
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>NewSimpleServlet</servlet-name>-->
+<!--        <url-pattern>/NewSimpleServletPaths</url-pattern>-->
+<!--    </servlet-mapping>-->
+<welcome-file-list>
+    <welcome-file>SimpleForm.html</welcome-file>
 
+</welcome-file-list>
 
 </web-app>
