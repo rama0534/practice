@@ -19,6 +19,7 @@ if (userName != null) {
     session.setAttribute("sessionUserName", userName);
     application.setAttribute("applicationUserName", userName);
     pageContext.setAttribute("pageContextUserName", userName);
+//    pageContext.setAttribute("pageContextUserName", userName, pageContext.APPLICATION_SCOPE);
 
 }
         %>
