@@ -32,5 +32,11 @@ the value of k is <%=k%>
     k=add(32343, 53452);
     out.println("the value of K is"+ k);
 %>
+
+<% for (i=0; i<5; i++) {
+    %>
+<br> The new value of i = <%=i%>%>
+<%
+}%>
 </body>
 </html>
