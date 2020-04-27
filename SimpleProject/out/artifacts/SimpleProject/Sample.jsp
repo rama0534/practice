@@ -42,6 +42,7 @@ the value of k is <%=k%>
 <%}%>
 <br>
 The time is <%= new Date()%>
+<br>
 <%@include file="/Clock.jsp"%>
 </body>
 </html>
