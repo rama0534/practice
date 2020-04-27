@@ -13,23 +13,24 @@
 <body>
 <h3>Testing JSP</h3>
 
-<%--<%--%>
-<%--    public int add(int a, int b){--%>
-<%--      return a+b;--%>
-<%--      --%>
-<%--    }--%>
-<%--%>--%>
+<%!
+    public int add(int a, int b) {
+      return a+b;
+
+    }
+%>
 <%
     int i=1;
     int j=4;
     int k;
     k= i+j;
-    out.println("the value of K is"+ i+j);
+    out.println("the value of K is"+ k);
 %>
 the value of k is <%=k%>
 
-//<%
-//    k=add(32343, 53452);
-//%>
+<%
+    k=add(32343, 53452);
+    out.println("the value of K is"+ k);
+%>
 </body>
 </html>
