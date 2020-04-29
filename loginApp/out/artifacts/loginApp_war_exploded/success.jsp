@@ -13,11 +13,17 @@
 <body>
 
 <h3> Login successful </h3>
-<%
-  User user = (User) request.getAttribute("user");
-%>
 
-Hello <%=user.getUserName()%>
+<jsp:useBean id="user" class="org.rama.User" scope="request">
+<jsp:setProperty name="user" property="userName" value="NewUser"/>
+</jsp:useBean>
+<%--<%--%>
+<%--  User user = (User) request.getAttribute("user");--%>
+<%--%>--%>
+
+Hello <jsp:getProperty name="user" property="userName"/>
+
+<%--<%=user.getUserName()%>--%>
 
 </body>
 </html>
