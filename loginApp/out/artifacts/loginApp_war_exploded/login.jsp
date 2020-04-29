@@ -12,11 +12,11 @@
 </head>
 <body>
 
-<form action="" method="post">
+<form action="loginServlet" method="post">
 
     <br> User ID  <input type="text" name="userID" />
     <br> Password <input type="password" name="password" />
-    <br> Submit <input type="submit"/>
+    <br> <input type="submit"/>
 
 
 </form>

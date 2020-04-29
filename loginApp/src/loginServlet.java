@@ -5,13 +5,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "loginServlet")
+@WebServlet(name = "loginServlet", urlPatterns = "/loginServlet")
 public class loginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
       String userId, password;
+
       userId =  request.getParameter("userId");
       password = request.getParameter("password");
+
+      loginService loginService = new loginService();
+      boolean result = loginService.authenticate(userId, password);
+
+      if (result){
+          response.sendRedirect("success.jsp");
+          return;
+      }
+      else {
+          response.sendRedirect("login.jsp");
+      }
+
 
     }
 
