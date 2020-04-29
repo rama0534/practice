@@ -18,6 +18,7 @@ public class loginServlet extends HttpServlet {
       boolean result = loginService.authenticate(userId, password);
 
       if (result){
+          User user = loginService.getUserDetails(userId);
           response.sendRedirect("success.jsp");
           return;
       }
