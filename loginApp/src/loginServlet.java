@@ -1,9 +1,11 @@
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import org.rama.User;
 
 @WebServlet(name = "loginServlet", urlPatterns = "/loginServlet")
 public class loginServlet extends HttpServlet {
@@ -19,11 +21,15 @@ public class loginServlet extends HttpServlet {
 
       if (result){
           User user = loginService.getUserDetails(userId);
-          response.sendRedirect("success.jsp");
+          request.setAttribute("user", user);
+          RequestDispatcher dispatcher = request.getRequestDispatcher("success.jsp");
+//          response.sendRedirect("success.jsp");
+          dispatcher.forward(request, response);
           return;
       }
       else {
           response.sendRedirect("login.jsp");
+          return;
       }
 
 

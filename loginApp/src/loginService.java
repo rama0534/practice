@@ -1,5 +1,5 @@
 import java.util.HashMap;
-
+import org.rama.User;
 public class loginService {
 
      HashMap<String, String> users = new HashMap<String, String>();

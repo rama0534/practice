@@ -14,7 +14,7 @@
 
 <form action="loginServlet" method="post">
 
-    <br> User ID  <input type="text" name="userID" />
+    <br> UserId  <input type="text" name="userId" />
     <br> Password <input type="password" name="password" />
     <br> <input type="submit"/>
 
