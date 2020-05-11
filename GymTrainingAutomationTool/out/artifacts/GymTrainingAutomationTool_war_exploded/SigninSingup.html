@@ -1,0 +1,79 @@
+<html>
+<head>
+    <title>Login and Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="nav-wrapper">
+    <div class="left-side">
+      <div class="nav-link-wrapper active-nav-link">
+        <a href="index.html">Home</a>
+      </div>
+
+      <div class="nav-link-wrapper">
+        <a href="about.html">About</a>
+      </div>
+
+      <div class="nav-link-wrapper">
+        <a href="SigninSingup.html">SignIn\SignUp</a>
+      </div>
+
+      <!-- <div class="nav-link-wrapper">
+        <a href="signUp.html">signUp</a>
+      </div> -->
+
+    </div>
+
+    <div class="right-side">
+      <div class="brand">
+        Gym Training
+      </div>
+    </div>
+  </div>
+    <div class="hero">
+
+
+        <div class="form-box">
+            <div class="button-box">
+                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                <button type="button" class="toggle-btn"onclick="register()">Register</button>
+        </div>
+        <form id="login" class="input-group" >
+            <input type="text" class="input-field" placeholder="used ID"required>
+            <input type="password" class="input-field" placeholder="Enter Password"required>
+            <input type="checkbox" class="check-box"><span>Remember Password</span>
+            <button type="submit" class="submit-btn">Log in</button>
+
+        </form>
+        <form id="register" class="input-group" action="connect.jsp" method="post">
+            <input type="text" class="input-field" placeholder="user ID"required name="userid">
+            <input type="email" class="input-field" placeholder="Email Id"required name="emailid">
+            <input type="password" class="input-field" placeholder="Enter Password"required name="password">
+
+            <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
+            <button type="submit" class="submit-btn">Register</button>
+
+        </form>
+</div>
+<script>
+var x = document.getElementById("login");
+var y = document.getElementById("register");
+var z = document.getElementById("btn");
+
+function register(){
+    x.style.left = "-400px";
+    y.style.left = "50px";
+    z.style.left = "110px";
+}
+function login(){
+    x.style.left = "50px";
+    y.style.left = "450px";
+    z.style.left = "0";
+}
+</script>
+
+
+</body>
+</html>
