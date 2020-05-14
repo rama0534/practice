@@ -6,21 +6,28 @@
 
     <bean id="triangle" class="rama.springdemo.Triangle">
         <property name="pointA" ref="ZeroPoint"/>
-        <property name="pointb" ref="Point2"/>
-        <property name="pointc" ref="Point3"/>
+
+        <property name="pointb">
+            <bean  class="rama.springdemo.Point">
+                <property name="x" value="20"/>
+                <property name="y" value="0"/>
+            </bean>
+        </property>
+
+        <property name="pointc" >
+                <bean class="rama.springdemo.Point">
+                    <property name="x" value="-20"/>
+                    <property name="y" value="0"/>
+                </bean>
+        </property>
+
     </bean>
     <bean id="ZeroPoint" class="rama.springdemo.Point">
-        <property name="x" value="0"/>
-        <property name="y" value="0"/>
+            <property name="x" value="0"/>
+            <property name="y" value="0"/>
     </bean>
 
-    <bean id="Point2" class="rama.springdemo.Point">
-        <property name="x" value="20"/>
-        <property name="y" value="0"/>
-    </bean>
+    <alias name="triangle" alias="triangle-alias"/>
 
-    <bean id="Point3" class="rama.springdemo.Point">
-        <property name="x" value="-20"/>
-        <property name="y" value="0"/>
-    </bean>
 </beans>
+
