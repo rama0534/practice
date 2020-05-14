@@ -1,41 +1,27 @@
 package rama.springdemo;
 
+import java.util.List;
+
 public class Triangle {
 
 
-    private Point pointA;
-    private Point pointb;
-    private Point pointc;
+    private List<Point> points;
 
-    public Point getPointA() {
-        return pointA;
+
+    public List<Point> getPoints() {
+        return points;
     }
 
-    public void setPointA(Point pointA) {
-        this.pointA = pointA;
-    }
-
-    public Point getPointb() {
-        return pointb;
-    }
-
-    public void setPointb(Point pointb) {
-        this.pointb = pointb;
-    }
-
-    public Point getPointc() {
-        return pointc;
-    }
-
-    public void setPointc(Point pointc) {
-        this.pointc = pointc;
+    public void setPoints(List<Point> points) {
+        this.points = points;
     }
 
     public void draw(){
 
-        System.out.println("Point A = (" +getPointA().getX()+","+getPointA().getY()+")");
-        System.out.println("Point B = (" +getPointb().getX()+","+getPointb().getY()+")");
-        System.out.println("Point C = (" +getPointc().getX()+","+getPointc().getY()+")");
+        for (Point point : points){
+            System.out.println("Point A = (" +point.getX()+","+point.getY()+")");
+
+        }
 
 }
 
