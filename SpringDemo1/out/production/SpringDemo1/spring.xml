@@ -5,9 +5,22 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="triangle" class="rama.springdemo.Triangle">
-    <constructor-arg  index="0" value="Equilateral"/>
-        <constructor-arg  index="1" value="20">
-        </constructor-arg>
+        <property name="pointA" ref="ZeroPoint"/>
+        <property name="pointb" ref="Point2"/>
+        <property name="pointc" ref="Point3"/>
+    </bean>
+    <bean id="ZeroPoint" class="rama.springdemo.Point">
+        <property name="x" value="0"/>
+        <property name="y" value="0"/>
     </bean>
 
+    <bean id="Point2" class="rama.springdemo.Point">
+        <property name="x" value="20"/>
+        <property name="y" value="0"/>
+    </bean>
+
+    <bean id="Point3" class="rama.springdemo.Point">
+        <property name="x" value="-20"/>
+        <property name="y" value="0"/>
+    </bean>
 </beans>
