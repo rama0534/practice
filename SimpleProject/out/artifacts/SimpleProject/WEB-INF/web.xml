@@ -26,17 +26,6 @@
 
 </welcome-file-list>
 
-    <servlet>
-        <servlet-name>InitJSP</servlet-name>
-        <jsp-file>/Initpage.jsp</jsp-file>
-        <init-param>
-            <param-name>defaultUser</param-name>
-            <param-value>Default User Name</param-value>
-        </init-param>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>InitJSP</servlet-name>
-        <url-pattern>/Initpage.jsp</url-pattern>
-    </servlet-mapping>
+    
 
 </web-app>

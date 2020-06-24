@@ -2,39 +2,27 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/context ">
 
-    <bean id="triangle" class="rama.springdemo.Triangle">
-        <property name="points">
-
-            <list>
-
-            <ref bean="ZeroPoint"/>
-            <ref bean="Point2"/>
-            <ref bean="Point3"/>
-            </list>
-
-
-        </property>
-
+    <bean id="triangle" class="rama.springdemo.Triangle" autowire="byName">
 
 
     </bean>
-    <bean id="ZeroPoint" class="rama.springdemo.Point">
-            <property name="x" value="0"/>
-            <property name="y" value="0"/>
+    <bean id="pointA" class="rama.springdemo.Point">
+        <property name="x" value="0"/>
+        <property name="y" value="0"/>
     </bean>
 
-    <bean id="Point2" class="rama.springdemo.Point">
+    <bean id="pointB" class="rama.springdemo.Point">
         <property name="x" value="20"/>
         <property name="y" value="0"/>
     </bean>
 
-    <bean id="Point3" class="rama.springdemo.Point">
+    <bean id="pointC" class="rama.springdemo.Point">
         <property name="x" value="-20"/>
         <property name="y" value="0"/>
     </bean>
-
 
 
 </beans>
