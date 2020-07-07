@@ -54,6 +54,15 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../dependencies/spring-context-5.2.6.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
           <root url="jar://$MODULE_DIR$/../../dependencies/spring-core-5.2.6.RELEASE.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -63,10 +72,22 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../dependencies/spring-context-5.2.6.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../dependencies/spring-beans-5.2.7.RELEASE.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../dependencies/commons-logging-1.2" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="file://$MODULE_DIR$/../../dependencies/commons-logging-1.2/apidocs" />
+        </JAVADOC>
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../../dependencies/commons-logging-1.2" recursive="false" />
       </library>
     </orderEntry>
   </component>

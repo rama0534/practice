@@ -5,25 +5,30 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
 http://www.springframework.org/schema/context ">
 
-    <bean id="triangle" class="rama.springdemo.Triangle" autowire="byName">
+    <bean id="triangle" class="rama.springdemo.Triangle">
+        <property name="pointA" ref="ZeroPoint"/>
 
+        <property name="pointb">
+            <bean class="rama.springdemo.Point">
+                <property name="x" value="20"/>
+                <property name="y" value="0"/>
+            </bean>
+        </property>
+
+        <property name="pointc">
+            <bean class="rama.springdemo.Point">
+                <property name="x" value="-20"/>
+                <property name="y" value="0"/>
+            </bean>
+        </property>
 
     </bean>
-    <bean id="pointA" class="rama.springdemo.Point">
+    <bean id="ZeroPoint" class="rama.springdemo.Point">
         <property name="x" value="0"/>
         <property name="y" value="0"/>
     </bean>
 
-    <bean id="pointB" class="rama.springdemo.Point">
-        <property name="x" value="20"/>
-        <property name="y" value="0"/>
-    </bean>
-
-    <bean id="pointC" class="rama.springdemo.Point">
-        <property name="x" value="-20"/>
-        <property name="y" value="0"/>
-    </bean>
-
+    <alias name="triangle" alias="triangle-alias"/>
 
 </beans>
 
