@@ -2,19 +2,23 @@ package rama;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
 import java.awt.*;
 import java.util.List;
 
-public class Triangle implements ApplicationContextAware, BeanNameAware {
+public class Triangle  implements InitializingBean, DisposableBean{
 
 
     private Point pointA;
     private Point pointB;
     private Point pointC;
-    private ApplicationContext context=null;
+
+
+    //private ApplicationContext context=null;
 
     public Point getPointA() {
         return pointA;
@@ -50,16 +54,40 @@ public class Triangle implements ApplicationContextAware, BeanNameAware {
     }
 
     @Override
-    public void setApplicationContext(ApplicationContext context) throws BeansException {
-
-        this.context = context;
-
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("InitializingBeans init method called for Triangle");
 
     }
 
     @Override
-    public void setBeanName(String beanName) {
-        System.out.println("Bean Name is :"+beanName);
+    public void destroy() throws Exception {
+        System.out.println("DisposibleBeans init method called for Triangle");
 
     }
+
+    //    @Override
+//    public void setApplicationContext(ApplicationContext context) throws BeansException {
+//
+//        this.context = context;
+//
+//
+//    }
+//
+//    @Override
+//    public void setBeanName(String beanName) {
+//        System.out.println("Bean Name is :"+beanName);
+//
+//    }
+
+    public void myInit(){
+        System.out.println("myInit method called for Triangle");
+    }
+
+    public void cleanUp(){
+
+        System.out.println("cleanUp  method called for Triangle");
+
+    }
+
+
 }
