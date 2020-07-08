@@ -1,4 +1,4 @@
-<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<?xml version="1.0" encoding="UTF-8"?>
 <!--<beans xmlns="http://www.springframework.org/schema/beans"-->
 <!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
 <!--       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">-->
@@ -7,33 +7,33 @@
 
 <beans
         xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
-http://www.springframework.org/schema/context "
-default-init-method="myInit" default-destroy-method="cleanUp">
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+        xmlns:context="http://www.springframework.org/schema/context"
+>
+    <context:annotation-config />
+    <!--    <bean id="triangle" class="rama.Triangle"  >-->
+    <!--         <property name="pointA" ref="pointA"/>-->
+    <!--        <property name="pointB" ref="pointB"/>-->
+    <!--        <property name="pointC" ref="pointC"/>-->
+    <!--    </bean>-->
 
-    <bean id="triangle" class="rama.Triangle"  >
-         <property name="pointA" ref="pointA"/>
-        <property name="pointB" ref="pointB"/>
-        <property name="pointC" ref="pointC"/>
-    </bean>
+    <!--    <bean id="triangle1" class="rama.Triangle" parent="parenttriangle">-->
 
-<!--    <bean id="triangle1" class="rama.Triangle" parent="parenttriangle">-->
+    <!--        <property name="pointB" ref="pointB"/>-->
+    <!--        <property name="pointC" ref="pointC"/>-->
 
-<!--        <property name="pointB" ref="pointB"/>-->
-<!--        <property name="pointC" ref="pointC"/>-->
+    <!--    </bean>-->
 
-<!--    </bean>-->
+    <!--    <bean id="triangle2" class="rama.Triangle" parent="parenttriangle">-->
 
-<!--    <bean id="triangle2" class="rama.Triangle" parent="parenttriangle">-->
-
-<!--        <property name="pointB" ref="pointB"/>-->
+    <!--        <property name="pointB" ref="pointB"/>-->
 
 
-<!--    </bean>-->
+    <!--    </bean>-->
 
     <bean id="pointA" class="rama.Point">
+        <qualifier value="circleRelated"></qualifier>
         <property name="x" value="0"></property>
         <property name="y" value="0"></property>
     </bean>
@@ -48,25 +48,26 @@ default-init-method="myInit" default-destroy-method="cleanUp">
         <property name="y" value="0"></property>
     </bean>
 
-<!--    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"></bean>-->
+    <!--    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"></bean>-->
 
-<!--    <bean class="rama.DisplayNameBeanPostProcessor"/>-->
-<!--<bean class="rama.MyBeanFactoryPP"/>-->
+    <!--    <bean class="rama.DisplayNameBeanPostProcessor"/>-->
+    <!--<bean class="rama.MyBeanFactoryPP"/>-->
 
-<!--&lt;!&ndash;    <bean class="rama.MyBeanFactoryPP"/>&ndash;&gt;-->
-<!--    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
-<!--        <property name="locations" value="pointsconfig.properties" />-->
-
-
-<!--    </bean>-->
+    <!--&lt;!&ndash;    <bean class="rama.MyBeanFactoryPP"/>&ndash;&gt;-->
+    <!--    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+    <!--        <property name="locations" value="pointsconfig.properties" />-->
 
 
-    <bean id="circle" class="rama.Circle"  >
-<!--        <property name="center" ref="pointA"/>-->
+    <!--    </bean>-->
+
+
+    <bean id="circle" class="rama.Circle">
+<!--                <property name="center" ref="pointA"/>-->
 
     </bean>
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 
-    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+    <!--    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>-->
 
 
 </beans>
