@@ -62,9 +62,11 @@ default-init-method="myInit" default-destroy-method="cleanUp">
 
 
     <bean id="circle" class="rama.Circle"  >
-        <property name="center" ref="pointA"/>
+<!--        <property name="center" ref="pointA"/>-->
 
     </bean>
+
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
 
 
 </beans>
