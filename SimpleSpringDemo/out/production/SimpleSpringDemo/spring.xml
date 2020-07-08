@@ -34,8 +34,8 @@ default-init-method="myInit" default-destroy-method="cleanUp">
 <!--    </bean>-->
 
     <bean id="pointA" class="rama.Point">
-        <property name="x" value="${pointA.pointX}"></property>
-        <property name="y" value="${pointA.pointY}"></property>
+        <property name="x" value="0"></property>
+        <property name="y" value="0"></property>
     </bean>
 
     <bean id="pointB" class="rama.Point">
@@ -53,10 +53,16 @@ default-init-method="myInit" default-destroy-method="cleanUp">
 <!--    <bean class="rama.DisplayNameBeanPostProcessor"/>-->
 <!--<bean class="rama.MyBeanFactoryPP"/>-->
 
-<!--    <bean class="rama.MyBeanFactoryPP"/>-->
-    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="locations" value="pointsconfig.properties" />
+<!--&lt;!&ndash;    <bean class="rama.MyBeanFactoryPP"/>&ndash;&gt;-->
+<!--    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+<!--        <property name="locations" value="pointsconfig.properties" />-->
 
+
+<!--    </bean>-->
+
+
+    <bean id="circle" class="rama.Circle"  >
+        <property name="center" ref="pointA"/>
 
     </bean>
 
