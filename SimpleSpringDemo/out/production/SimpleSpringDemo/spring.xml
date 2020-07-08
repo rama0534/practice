@@ -43,7 +43,7 @@
         <property name="y" value="0"></property>
     </bean>
 
-    <bean id="pointC" class="rama.Point">
+    <bean id="center" class="rama.Point">
         <property name="x" value="20"></property>
         <property name="y" value="0"></property>
     </bean>
