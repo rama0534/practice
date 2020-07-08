@@ -10,7 +10,7 @@ import org.springframework.context.ApplicationContextAware;
 import java.awt.*;
 import java.util.List;
 
-public class Triangle  implements InitializingBean, DisposableBean{
+public class Triangle {
 
 
     private Point pointA;
@@ -53,17 +53,17 @@ public class Triangle  implements InitializingBean, DisposableBean{
 
     }
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        System.out.println("InitializingBeans init method called for Triangle");
-
-    }
-
-    @Override
-    public void destroy() throws Exception {
-        System.out.println("DisposibleBeans init method called for Triangle");
-
-    }
+//    @Override
+//    public void afterPropertiesSet() throws Exception {
+//        System.out.println("InitializingBeans init method called for Triangle");
+//
+//    }
+//
+//    @Override
+//    public void destroy() throws Exception {
+//        System.out.println("Disposible Beans init method called for Triangle");
+//
+//    }
 
     //    @Override
 //    public void setApplicationContext(ApplicationContext context) throws BeansException {
@@ -79,15 +79,15 @@ public class Triangle  implements InitializingBean, DisposableBean{
 //
 //    }
 
-    public void myInit(){
-        System.out.println("myInit method called for Triangle");
-    }
-
-    public void cleanUp(){
-
-        System.out.println("cleanUp  method called for Triangle");
-
-    }
+//    public void myInit(){
+//        System.out.println("myInit method called for Triangle");
+//    }
+//
+//    public void cleanUp(){
+//
+//        System.out.println("cleanUp  method called for Triangle");
+//
+//    }
 
 
 }
