@@ -68,6 +68,6 @@
     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 
     <!--    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>-->
-
+<context:component-scan base-package="rama"></context:component-scan>
 
 </beans>
