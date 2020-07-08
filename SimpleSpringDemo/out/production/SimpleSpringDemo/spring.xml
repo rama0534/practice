@@ -12,10 +12,10 @@
 http://www.springframework.org/schema/context "
 default-init-method="myInit" default-destroy-method="cleanUp">
 
-    <bean id="triangle" class="rama.Triangle"  autowire="byName">
-<!--         <property name="pointA" ref="pointA"/>-->
-<!--        <property name="pointB" ref="pointB"/>-->
-<!--        <property name="pointC" ref="pointC"/>-->
+    <bean id="triangle" class="rama.Triangle"  >
+         <property name="pointA" ref="pointA"/>
+        <property name="pointB" ref="pointB"/>
+        <property name="pointC" ref="pointC"/>
     </bean>
 
 <!--    <bean id="triangle1" class="rama.Triangle" parent="parenttriangle">-->
@@ -46,6 +46,8 @@ default-init-method="myInit" default-destroy-method="cleanUp">
         <property name="x" value="20"></property>
         <property name="y" value="0"></property>
     </bean>
+
+    <bean class="rama.DisplayNameBeanPostProcessor"/>
 
 
 </beans>
