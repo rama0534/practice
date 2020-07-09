@@ -70,4 +70,13 @@
     <!--    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>-->
 <context:component-scan base-package="rama"></context:component-scan>
 
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+         <property name="basenames">
+             <list>
+                 <value>mymessages</value>
+             </list>
+         </property>
+
+    </bean>
+
 </beans>
