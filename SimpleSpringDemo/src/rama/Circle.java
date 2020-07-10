@@ -2,6 +2,8 @@ package rama;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.ApplicationEventPublisherAware;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Component;
 
@@ -10,10 +12,11 @@ import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
 //import org.springframework.beans.factory.annotation.Required;
 @Component
-public class Circle implements Shape {
+public class Circle implements Shape, ApplicationEventPublisherAware {
 
 
     private Point center;
+    private ApplicationEventPublisher publisher;
 
     @Autowired
     public void setMessageSource(MessageSource messageSource) {
@@ -29,6 +32,10 @@ public class Circle implements Shape {
                 "Default point Greeting", null));
 //        System.out.println("Circle: Point is: ( "+ center.getX()+","+center.getY()+")");
         System.out.println(this.messageSource.getMessage("greeting", null,"Default Greeting", null));
+        DrawEvent drawEvent = new DrawEvent(this);
+        publisher.publishEvent(drawEvent);
+
+
 
 
 
@@ -57,4 +64,9 @@ public class Circle implements Shape {
     }
 
 
+    @Override
+    public void setApplicationEventPublisher(ApplicationEventPublisher publisher) {
+        this.publisher = publisher;
+
+    }
 }
