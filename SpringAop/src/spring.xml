@@ -17,7 +17,7 @@
     </bean>
 
     <bean name="circle" class="model.Circle">
-        <property name="name" value="Circle Name"></property>
+<!--        <property name="name" value="Circle Name"></property>-->
     </bean>
 
     <bean name="shapeService" class="service.ShapeService" autowire="byName"/>
