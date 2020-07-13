@@ -10,8 +10,6 @@
     <aop:aspectj-autoproxy />
 
 
-
-
     <bean name="triangle" class="model.Triangle">
         <property name="name" value="Triangle Name"></property>
     </bean>
@@ -23,5 +21,14 @@
     <bean name="shapeService" class="service.ShapeService" autowire="byName"/>
 
     <bean name="loggingAspect" class="aspect.LoggingAspect"/>
+
+    <aop:config>
+        <aop:aspect id="logginAspect" ref="loggingAspect">
+<!--          <aop:pointcut id="allGetters" expression="execution(* get*())"/>-->
+           <aop:around pointcut="execution(* get*())" method="myAroundAdvice"/>
+
+        </aop:aspect>
+
+    </aop:config>
 
 </beans>
