@@ -22,4 +22,6 @@
 
     <bean name="shapeService" class="service.ShapeService" autowire="byName"/>
 
+    <bean name="loggingAspect" class="aspect.LoggingAspect"/>
+
 </beans>
