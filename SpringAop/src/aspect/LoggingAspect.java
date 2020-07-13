@@ -2,12 +2,16 @@ package aspect;
 
 import model.Circle;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+
+import java.util.Objects;
 
 @Aspect
 public class LoggingAspect {
@@ -52,6 +56,24 @@ public class LoggingAspect {
 //    public void secondAdvices(){
 //        System.out.println("Second Advice Executed");
 //    }
+
+    @Around("aspect.LoggingAspect.allGetters()")
+    public Object myAroundAdvice(ProceedingJoinPoint proceedingJoinPoint){
+
+        Object returnValue = null;
+        try {
+            System.out.println("Before Advice");
+//            proceedingJoinPoint.proceed();
+            returnValue = proceedingJoinPoint.proceed();
+            System.out.println("After Retuning ");
+
+        }catch (Throwable e) {
+            System.out.println("After Throwing");
+        }
+        System.out.println("After Finally");
+        return returnValue;
+
+    }
 
     @Pointcut("execution(* get*())")
     public void allGetters(){
