@@ -57,7 +57,7 @@ public class LoggingAspect {
 //        System.out.println("Second Advice Executed");
 //    }
 
-    @Around("aspect.LoggingAspect.allGetters()")
+    @Around("@annotation(aspect.Loggable)")
     public Object myAroundAdvice(ProceedingJoinPoint proceedingJoinPoint){
 
         Object returnValue = null;
