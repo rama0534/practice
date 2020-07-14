@@ -71,6 +71,23 @@ public class JdbcDaoImpl {
         }
 
 
+        public String getCircleName(int circleId){
+
+            String sql = "SELECT NAME FROM CIRCLE WHERE ID=?";
+            return jdbcTemplate.queryForObject(sql,new Object[]{circleId}, String.class);
+
+
+        }
+
+//        public Circle getCircleforId(int circleId){
+//
+//            String sql = "SELECT * FROM CIRCLE WHERE ID=?";
+//             jdbcTemplate.queryForObject(sql,new Object[]{circleId}, String.class);
+//
+//
+//        }
+
+
     }
 
 
