@@ -27,9 +27,9 @@ public class JdbcDemo {
 //            e.printStackTrace();
 //        }
 //        System.out.println(circle.getName());
-//       dao.insertCircle(new Circle(3,"Third Circle"));
-//        System.out.println(dao.getAllCircles().size());
-        dao.createTraiangleTable();
+       dao.insertCircle(new Circle(5,"Fifth Circle"));
+        System.out.println(dao.getAllCircles().size());
+//        dao.createTraiangleTable();
 
     }
 }
