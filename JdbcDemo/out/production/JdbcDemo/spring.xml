@@ -15,6 +15,10 @@
         <property name="maxTotal" value="5"/>
     </bean>
 
+    <bean id="simpleJdbcDaoImpl" class="dao.SimpleJdbcDaoImpl">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
 </beans>
 
 

@@ -1,6 +1,7 @@
 package rama;
 
 import dao.JdbcDaoImpl;
+import dao.SimpleJdbcDaoImpl;
 import model.Circle;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationEvent;
@@ -13,7 +14,8 @@ public class JdbcDemo {
     public static void main(String[] args){
 
         ApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
-        JdbcDaoImpl dao = ctx.getBean("jdbcDaoImpl", JdbcDaoImpl.class);
+        SimpleJdbcDaoImpl dao = ctx.getBean("simpleJdbcDaoImpl", SimpleJdbcDaoImpl.class);
+                                                    
 //        Circle circle = null;
 //        try {
 //            circle = dao.getCircle(1);
@@ -27,9 +29,10 @@ public class JdbcDemo {
 //            e.printStackTrace();
 //        }
 //        System.out.println(circle.getName());
-       dao.insertCircle(new Circle(5,"Fifth Circle"));
-        System.out.println(dao.getAllCircles().size());
+//       dao.insertCircle(new Circle(5,"Fifth Circle"));
+//        System.out.println(dao.getAllCircles().size());
 //        dao.createTraiangleTable();
+        System.out.println(dao.getCircleCount());
 
     }
 }
