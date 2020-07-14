@@ -28,7 +28,7 @@ public class JdbcDemo {
 //        }
 //        System.out.println(circle.getName());
 
-        System.out.println(dao.getCircleName(1));
+        System.out.println(dao.getAllCircles().size());
 
     }
 }
