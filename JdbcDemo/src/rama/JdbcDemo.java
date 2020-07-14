@@ -14,19 +14,21 @@ public class JdbcDemo {
 
         ApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
         JdbcDaoImpl dao = ctx.getBean("jdbcDaoImpl", JdbcDaoImpl.class);
-        Circle circle = null;
-        try {
-            circle = dao.getCircle(1);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        }
-        System.out.println(circle.getName());
+//        Circle circle = null;
+//        try {
+//            circle = dao.getCircle(1);
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        } catch (IllegalAccessException e) {
+//            e.printStackTrace();
+//        } catch (InstantiationException e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println(circle.getName());
+
+        System.out.println(dao.getCircleCount());
 
     }
 }
