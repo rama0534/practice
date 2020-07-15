@@ -1,5 +1,6 @@
 package rama;
 
+import dao.HibernateDaoImpl;
 import dao.JdbcDaoImpl;
 import dao.SimpleJdbcDaoImpl;
 import model.Circle;
@@ -14,8 +15,8 @@ public class JdbcDemo {
     public static void main(String[] args){
 
         ApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
-        SimpleJdbcDaoImpl dao = ctx.getBean("simpleJdbcDaoImpl", SimpleJdbcDaoImpl.class);
-                                                    
+        HibernateDaoImpl dao = ctx.getBean("hibernateDaoImpl", HibernateDaoImpl.class);
+
 //        Circle circle = null;
 //        try {
 //            circle = dao.getCircle(1);
