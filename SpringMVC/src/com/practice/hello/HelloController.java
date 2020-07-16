@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 //public class HelloController extends AbstractController {
 //    @Override
-//    protected ModelAndView handleRequestInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
+//    protected ModelAndView handleRequestInternal(HttpServletRequest httpServletRequest, HttpServletResponse
+//    httpServletResponse) throws Exception {
 //
 //        ModelAndView modelAndView = new ModelAndView("/HelloPage");
 //        modelAndView.addObject("WelcomeMessage","Hi User, Welcome to the first Spring application" );
@@ -19,14 +20,25 @@ import javax.servlet.http.HttpServletResponse;
 //    }
 //}
 @Controller
+@RequestMapping("/greet")
 public class HelloController {
 
     @RequestMapping("/welcome")
-    public ModelAndView helloWorld(){
+    public ModelAndView helloWorld() {
 
         ModelAndView model = new ModelAndView("/HelloPage");
-//    model.addObject("HelloWorld");
-        model.addObject("msg","HelloWorld");
+        //    model.addObject("HelloWorld");
+        model.addObject("msg", "Hello World");
+
+        return model;
+    }
+
+    @RequestMapping("/hi")
+    public ModelAndView hiWorld() {
+
+        ModelAndView model = new ModelAndView("/HelloPage");
+
+        model.addObject("msg", "Hi World");
 
         return model;
     }
