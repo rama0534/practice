@@ -31,7 +31,7 @@ public class HelloController {
         String name = pathVars.get("userName");
         String country = pathVars.get("countryName");
 
-        ModelAndView model = new ModelAndView("/HelloPage");
+        ModelAndView model = new ModelAndView("HelloPage");
         //    model.addObject("HelloWorld");
         model.addObject("msg", "Hello  "+ name + "  you are from " +country);
 
