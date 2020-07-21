@@ -32,6 +32,13 @@
         <td>Student Skills : </td>
         <td>${student1.studentSkills}</td>
     </tr>
+    <tr>
+        <td> Student Address :</td>
+        <td> Country: ${student1.studentAddress.country}</td>
+        <td> City: ${student1.studentAddress.city}</td>
+        <td> State: ${student1.studentAddress.street}</td>
+        <td> Pin Code: ${student1.studentAddress.pincode}</td>
+    </tr>
 
 
 

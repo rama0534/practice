@@ -14,8 +14,16 @@ public class Student {
     private Date studentDOB;
     private List<String> studentSkills;
 
+    private Address studentAddress;
 
-//    private ArrayList<String> studentSkills;
+    public Address getStudentAddress() {
+        return studentAddress;
+    }
+
+    public void setStudentAddress(Address studentAddress) {
+        this.studentAddress = studentAddress;
+    }
+    //    private ArrayList<String> studentSkills;
 
 
 

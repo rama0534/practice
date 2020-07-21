@@ -1,3 +1,5 @@
+
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>Title</title>
@@ -6,7 +8,7 @@
 
 <h1>${msg}</h1>
 <h2>Student Admission Form For Engineering Courses </h2>
-
+<form:errors path="student1.*"/>
 <form action="submitAdmissionForm.html" method="post">
 
     <table>
@@ -30,6 +32,19 @@
                                     <option VALUE="Spring MVC ">Spring MVC</option>
                                </select></td>
         </tr>
+
+    </table>
+    <table>
+        <tr><td>Student Address :</td></tr>
+        <tr>
+            <td> Country :<input type="text" name="studentAddress.country"/></td>
+            <td> City :<input type="text" name="studentAddress.city"/></td>
+            <td> Street :<input type="text" name="studentAddress.street"/></td>
+            <td> Pin code :<input type="text" name="studentAddress.pincode"/></td>
+
+
+        </tr>
+
 
     </table>
 
