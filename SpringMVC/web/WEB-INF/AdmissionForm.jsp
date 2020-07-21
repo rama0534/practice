@@ -4,7 +4,8 @@
 </head>
 <body>
 
-    <h1>Student Admission Form For Engineering Courses </h1>
+    <h1>${msg}</h1>
+    <h2>Student Admission Form For Engineering Courses </h2>
 
     <form action="submitAdmissionForm.html" method="post">
 
