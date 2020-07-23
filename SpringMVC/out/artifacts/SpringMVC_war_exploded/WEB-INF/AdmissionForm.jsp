@@ -22,7 +22,7 @@
             <td>Student's Mobile :</td>  <td> <input type="text" name="studentMobile"/></td>
         </tr>
         <tr>
-            <td>Student's DOB :</td>   <td> <input type="text" name="studentDOB" value="DDMMYYYY"/></td>
+            <td>Student's DOB :</td>   <td> <input type="text" name="studentDOB"    /></td>
         </tr>
         <tr>
             <td>Student's Skills : </td>
