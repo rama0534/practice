@@ -1,5 +1,6 @@
 package com.practice.hello;
 
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -8,9 +9,15 @@ import java.util.List;
 public class Student {
 
 
+
     private String studentName;
+
+    @Size(min=5, max=30)
     private String studentHobby;
+
+
     private Long studentMobile;
+
     private Date studentDOB;
     private List<String> studentSkills;
 

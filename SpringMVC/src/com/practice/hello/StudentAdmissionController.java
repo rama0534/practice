@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import org.springframework.*;
 
+import javax.validation.Valid;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -46,7 +47,7 @@ public class StudentAdmissionController {
     @RequestMapping(value = "/submitAdmissionForm.html", method = RequestMethod.POST)
     //    public ModelAndView submitAdmissionForm(@RequestParam("studentName") String name,
     //                                            @RequestParam("studentHobby") String hobby) {
-    public ModelAndView submitAdmissionForm(@ModelAttribute("student1") Student student1, BindingResult result) {
+    public ModelAndView submitAdmissionForm(@Valid @ModelAttribute("student1") Student student, BindingResult result) {
         //        Student student1 = new Student();
         //        student1.setStudentName(name);
         //        student1.setStudentHobby(hobby);
