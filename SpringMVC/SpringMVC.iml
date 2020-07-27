@@ -27,84 +27,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../dependencies/servlet-api-3.0-alpha-1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$MODULE_DIR$/../../dependencies/servlet-api-3.0-alpha-1.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../dependencies/jstl-1.2.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <ANNOTATIONS>
-          <root url="jar://$MODULE_DIR$/../../dependencies/hibernate-validator-6.1.5.Final.jar!/" />
-        </ANNOTATIONS>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../dependencies/hibernate-validator-6.1.5.Final.jar!/" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="jar://$MODULE_DIR$/../../dependencies/hibernate-validator-6.1.5.Final.jar!/" />
-        </JAVADOC>
-        <NATIVE>
-          <root url="jar://$MODULE_DIR$/../../dependencies/hibernate-validator-6.1.5.Final.jar!/" />
-        </NATIVE>
-        <SOURCES>
-          <root url="jar://$MODULE_DIR$/../../dependencies/hibernate-validator-6.1.5.Final.jar!/" />
-        </SOURCES>
-        <jarDirectory url="jar://$MODULE_DIR$/../../dependencies/hibernate-validator-6.1.5.Final.jar!/" recursive="false" />
-        <jarDirectory url="jar://$MODULE_DIR$/../../dependencies/hibernate-validator-6.1.5.Final.jar!/" recursive="false" type="SOURCES" />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../dependencies/validation-api-2.0.1.Final.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../dependencies/jboss-logging-3.4.1.Final.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../dependencies/hibernate-validator-6.1.5.Final/dist/hibernate-validator-cdi-6.1.5.Final.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../dependencies/classmate-1.0.0.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../dependencies/hibernate-validator-6.1.5.Final/dist/hibernate-validator-annotation-processor-6.1.5.Final.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../dependencies/javax.servlet-api-3.0.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -140,7 +63,106 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../dependencies/hibernate-validator-6.1.5.Final/dist/lib/required/jboss-logging-3.3.2.Final.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../dependencies/hibernate-validator-6.1.5.Final/dist/lib/optional/jakarta.persistence-api-2.2.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../dependencies/hibernate-validator-6.1.5.Final/dist/lib/optional/joda-time-2.9.7.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../dependencies/hibernate-validator-6.1.5.Final/dist/lib/optional/jsoup-1.8.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../dependencies/hibernate-validator-6.1.5.Final/dist/lib/optional/paranamer-2.8.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../dependencies/hibernate-validator-6.1.5.Final/dist/lib/optional/log4j-1.2.17.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../dependencies/hibernate-validator-6.1.5.Final/dist/hibernate-validator-cdi-6.1.5.Final.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../dependencies/hibernate-validator-6.1.5.Final/dist/hibernate-validator-annotation-processor-6.1.5.Final.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../dependencies/hibernate-validator-6.1.5.Final/dist/hibernate-validator-6.1.5.Final.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../dependencies/jboss-logging-3.4.1.Final.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../dependencies/validation-api-2.0.1.Final.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../dependencies/commons-logging-1.2/commons-logging-1.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../dependencies/com.springsource.javax.validation-1.0.0.GA.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

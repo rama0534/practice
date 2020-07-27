@@ -1,7 +1,6 @@
 package com.practice.hello;
-
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -9,16 +8,18 @@ import java.util.List;
 public class Student {
 
 
-
+    @NotNull
     private String studentName;
 
-    @Size(min=5, max=30)
+    @Size(min=5,max=10)
     private String studentHobby;
 
 
     private Long studentMobile;
 
+
     private Date studentDOB;
+
     private List<String> studentSkills;
 
     private Address studentAddress;
