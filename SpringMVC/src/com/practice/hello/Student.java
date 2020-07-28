@@ -1,4 +1,7 @@
 package com.practice.hello;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
@@ -8,7 +11,7 @@ import java.util.List;
 public class Student {
 
 
-    @NotNull
+    @NotEmpty
     private String studentName;
 
     @Size(min=5,max=10)

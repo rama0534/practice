@@ -10,14 +10,18 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd
 http://www.springframework.org/schema/mvc
 http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
+    <context:component-scan base-package="com.practice.hello"/>
     <context:annotation-config/>
-
-    <context:component-scan base-package="com.practice.hello"></context:component-scan>
 <!--    <mvc:annotation-driven/>-->
 
-    <mvc:interceptors>
-        <bean class="com.practice.hello.DayofWeekBasedAccessInterceptor"/>
-    </mvc:interceptors>
+<!--    <mvc:resources location="/WEB-INF/" mapping="/resources/**"/>-->
+<!--    <mvc:interceptors>-->
+<!--        <mvc:interceptor>-->
+<!--            <mvc:mapping path="AdmissionFrom.html"/>-->
+<!--            <bean class="com.practice.hello.DayofWeekBasedAccessInterceptor"/>-->
+<!--        </mvc:interceptor>-->
+<!--    </mvc:interceptors>-->
+
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
             <value>/WEB-INF/</value>
@@ -27,7 +31,11 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
         </property>
     </bean>
 
-    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-        <property name="basename" value="/WEB-INF/studentsmessages.properties"></property>
-    </bean>
+    <!--    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">-->
+    <!--        <property name="basename">-->
+    <!--            <value>/WEB-INF/student</value>-->
+    <!--&lt;!&ndash;&lt;!&ndash;            <value="/WEB-INF/studentmessages.properties">&ndash;&gt;-->
+    <!--        </property>-->
+
+    <!--    </bean>-->
 </beans>
