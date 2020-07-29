@@ -23,5 +23,8 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
             <value>.jsp</value>
         </property>
     </bean>
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="/WEB-INF/studentmessages.properties"/>
+    </bean>
 
 </beans>

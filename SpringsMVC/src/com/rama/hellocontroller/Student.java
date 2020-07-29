@@ -14,7 +14,7 @@ public class Student {
     @NotEmpty
     private String studentName;
 
-    @Size(min=5,max=10)
+    @Size(min=5,max=20)
     private String studentHobby;
 
 
