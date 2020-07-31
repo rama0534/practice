@@ -15,7 +15,10 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <context:annotation-config/>
     <mvc:annotation-driven/>
     <mvc:interceptors>
-        <bean class="com.rama.hellocontroller.DayofWeekBasedAccessInterceptor"/>
+        <mvc:interceptor>
+            <mvc:mapping path="AdmissionFrom.html"/>
+            <bean class="com.rama.hellocontroller.DayofWeekBasedAccessInterceptor"/>
+        </mvc:interceptor>
     </mvc:interceptors>
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">

@@ -15,7 +15,7 @@ public class DayofWeekBasedAccessInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Calendar cal = Calendar.getInstance();
         int dayOfWeek = cal.get(cal.DAY_OF_WEEK);
-        if (dayOfWeek == 6) {
+        if (dayOfWeek == 1) {
             response.getWriter().write("The website is closed on Sunday: please try acessing it" + "on any other week" +
                     " " +
                     "day!!");
