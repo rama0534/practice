@@ -15,6 +15,8 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface IsValidHobby {
 
+    String ListofValidHobbies() default "Music|Football|Cricket|Hockey";
+
     String message() default "Please provide a valid Hobby:" + "Accepeted hobbies are - Music, Football, Cricket and " +
             "Hockey  (choose anyone)";
     Class<?> [] groups() default{};
