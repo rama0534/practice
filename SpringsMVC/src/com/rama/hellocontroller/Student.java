@@ -3,6 +3,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Range;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.List;
@@ -11,7 +13,7 @@ import java.util.List;
 public class Student {
 
 
-    @NotEmpty
+    @Pattern(regexp = "[^0-9]*")
     private String studentName;
 
     @Size(min=5,max=20)
@@ -20,7 +22,7 @@ public class Student {
 
     private Long studentMobile;
 
-
+    @Past
     private Date studentDOB;
 
     private List<String> studentSkills;
