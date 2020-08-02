@@ -1,0 +1,14 @@
+Size.student1.studentHobby=please enter a value for {0} field between {2} and {1} characters.
+label.studentName=Student's Name
+label.studentHobby=Student's Hobby
+label.studentMobile=Student's Mobile
+label.studentDOB=Students's DOB
+label.studentSkills=Student's Skills set
+label.studentAddress=Student's Address
+label.country=country
+label.city=city
+label.street=street
+label.pincode=pincode
+label.submit.admissionForm=Submit
+label.admissionForm=Student Admission Form 
+

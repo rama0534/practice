@@ -12,7 +12,7 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <bean id="HandlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
     <context:component-scan base-package="com.practice.hello"/>
-    <context:annotation-config/>
+<!--    <context:annotation-config/>-->
     <mvc:annotation-driven/>
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">

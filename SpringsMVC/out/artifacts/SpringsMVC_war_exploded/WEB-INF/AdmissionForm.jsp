@@ -1,10 +1,13 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-
+<a href="/SpringsMVC/AdmissionForm.html?siteLanguage=en">English</a> <a
+        href="/SpringsMVC/AdmissionForm.html?siteLanguage=te">Telugu</a>
 <h1>${msg}</h1>
 <h2>Student Admission Form For Engineering Courses </h2>
 <form:errors path="student1.*"/>
@@ -12,7 +15,7 @@
 
     <table>
         <tr>
-            <td>Student's Name :</td>
+            <td><spring:message code="label.studentName"/></td>
             <td><input type="text" name="studentName"/></td>
         </tr>
         <tr>

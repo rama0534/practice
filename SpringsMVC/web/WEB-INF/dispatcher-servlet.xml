@@ -21,6 +21,10 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
         </mvc:interceptor>
     </mvc:interceptors>
 
+    <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+        <property name="paramName" value="siteLanguage"/>
+    </bean>
+
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
             <value>/WEB-INF/</value>
@@ -29,8 +33,13 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
             <value>.jsp</value>
         </property>
     </bean>
+
+
+
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-        <property name="basename" value="/WEB-INF/studentmessages.properties"/>
+        <property name="basename" value="/WEB-INF/messages"/>
     </bean>
+
+    <bean id="LocaleResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver"/>
 
 </beans>
