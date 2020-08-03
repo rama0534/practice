@@ -14,16 +14,21 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <context:component-scan base-package="com.rama.hellocontroller"/>
     <context:annotation-config/>
     <mvc:annotation-driven/>
+    <mvc:resources location="/WEB-INF/" mapping="/resources/**" />
     <mvc:interceptors>
         <mvc:interceptor>
-            <mvc:mapping path="AdmissionFrom.html"/>
+            <mvc:mapping path="/AdmissionFrom.html"/>
             <bean class="com.rama.hellocontroller.DayofWeekBasedAccessInterceptor"/>
         </mvc:interceptor>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+            <property name="paramName" value="siteLanguage"/>
+        </bean>
+
+        <bean class="org.springframework.web.servlet.theme.ThemeChangeInterceptor">
+            <property name="paramName" value="siteTheme"/>
+        </bean>
     </mvc:interceptors>
 
-    <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-        <property name="paramName" value="siteLanguage"/>
-    </bean>
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
@@ -34,16 +39,24 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
         </property>
     </bean>
 
-    <bean id="localeResolver"
-          class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
-        <property name="defaultLocale" value="en" />
-    </bean>
-
-
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-        <property name="basename" value="/WEB-INF/messages"/>
+        <property name="basename" value="/WEB-INF/studnetmessage"/>
     </bean>
 
-    <bean id="LocaleResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver"/>
+    <bean id="localeResolver"
+          class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+    </bean>
+
+    <bean id="themeSource"
+          class="org.springframework.ui.context.support.ResourceBundleThemeSource">
+        <property name="basenamePrefix" value="theme-"/>
+    </bean>
+
+    <bean id="themeResolver"
+           class="org.springframework.web.servlet.theme.CookieThemeResolver">
+        <property name="defaultThemeName" value="green"/>
+    </bean>
+
+
 
 </beans>

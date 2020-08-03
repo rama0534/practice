@@ -6,16 +6,19 @@
     <title>Title</title>
 </head>
 <body>
-<a href="/SpringsMVC/AdmissionForm.html?siteLanguage=en">English</a> <a
-        href="/SpringsMVC/AdmissionForm.html?siteLanguage=te">Telugu</a>
+<link rel="stylesheet" href="<spring:theme code='styleSheet'/>" type="text/css"/>
+<p> <a href="/SpringsMVC/AdmissionFrom.html?siteTheme=green">Green</a>
+    <a href="/SpringsMVC/AdmissionFrom.html?siteTheme=red">Red</a>
+</p>
+
 <h1>${msg}</h1>
-<h2>Student Admission Form For Engineering Courses </h2>
+<h3>Student Admission Form For Engineering Courses </h3>
 <form:errors path="student1.*"/>
 <form action="submitAdmissionForm.html" method="post">
 
     <table>
         <tr>
-            <td><spring:message code="label.studentName"/></td>
+            <td>Student's Name</td>
             <td><input type="text" name="studentName"/></td>
         </tr>
         <tr>
