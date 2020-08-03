@@ -56,6 +56,20 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
            class="org.springframework.web.servlet.theme.CookieThemeResolver">
         <property name="defaultThemeName" value="green"/>
     </bean>
+<!--    <bean id="simpleMappingExceptionResolver"-->
+<!--          class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">-->
+<!--        <property name="exceptionMappings">-->
+<!--            <map>-->
+<!--                <entry key="NullPointerException" value="NullPointerException"/>-->
+<!--                <entry key="IOException" value="IOException"/>-->
+<!--            </map>-->
+<!--        </property>-->
+<!--        &lt;!&ndash; Default error web page or the generic error web page&ndash;&gt;-->
+<!--        <property name="defaultErrorView" value="Exception"/>-->
+<!--        &lt;!&ndash; use to log exception&ndash;&gt;-->
+<!--        <property name="warnLogCategory" value="MVCLogger"/>-->
+
+<!--    </bean>-->
 
 
 
