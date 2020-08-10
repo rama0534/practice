@@ -2,7 +2,7 @@ package rama;
 
 import java.util.*;
 
-public class MyClass{
+public class MyCslass{
 
 	public static void main(String args[]){
 	
