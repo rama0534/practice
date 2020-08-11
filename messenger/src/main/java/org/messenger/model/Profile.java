@@ -12,10 +12,11 @@ public class Profile {
     private String lastName;
     private Date created;
 
-    public Profile(){
+    public Profile() {
 
     }
-    public Profile(long id, String profileName, String firstName,String lastName){
+
+    public Profile(long id, String profileName, String firstName, String lastName) {
         this.id = id;
         this.profileName = profileName;
         this.firstName = firstName;

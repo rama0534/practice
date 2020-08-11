@@ -2,6 +2,7 @@ package org.messenger.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
+
 @XmlRootElement
 public class Message {
 
@@ -10,11 +11,11 @@ public class Message {
     private Date created;
     private String author;
 
-    public Message(){
+    public Message() {
 
     }
 
-    public Message(long id, String message, String author){
+    public Message(long id, String message, String author) {
         this.id = id;
         this.message = message;
         this.author = author;
