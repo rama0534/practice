@@ -24,13 +24,30 @@ import java.util.List;
 
 @Path("/messages")
 @Consumes(MediaType.APPLICATION_XML)
-@Produces(MediaType.APPLICATION_XML)
+@Produces( MediaType.APPLICATION_XML)
 public class MessageResource {
 
     MessageService messageService = new MessageService();
 
     @GET
-    public List<Message> getMessages(@BeanParam MessageFilterBean filterBean) {
+    @Produces( MediaType.APPLICATION_JSON)
+    public List<Message> getJsonMessages(@BeanParam MessageFilterBean filterBean) {
+
+        System.out.println("Json Method called");
+
+        if (filterBean.getYear() > 0) {
+            return messageService.getAllMessagesForYear(filterBean.getYear());
+        }
+        if (filterBean.getStart() >= 0 && filterBean.getSize() >= 0) {
+            return messageService.getAllMessagesPaginated(filterBean.getStart(), filterBean.getSize());
+        }
+        return messageService.getAllMessages();
+    }
+
+    @GET
+    @Produces( MediaType.APPLICATION_XML)
+    public List<Message> getXmlMessages(@BeanParam MessageFilterBean filterBean) {
+        System.out.println("Xml Method called");
 
         if (filterBean.getYear() > 0) {
             return messageService.getAllMessagesForYear(filterBean.getYear());
