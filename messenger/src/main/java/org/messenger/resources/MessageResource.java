@@ -14,13 +14,11 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.List;
 
 
@@ -70,15 +68,31 @@ public class MessageResource {
     public Message getMessage(@PathParam("messageId") long id, @Context UriInfo uriInfo) {
 
         Message message = messageService.getMessage(id);
-        getUriForSelf(uriInfo, message);
+        message.addLink(getUriForSelf(uriInfo, message), "self");
+        message.addLink(getUriForProfile(uriInfo, message), "Profile");
+        message.addLink(getUriForComments(uriInfo, message), "Profile");
         return message;
 
     }
 
-    private void getUriForSelf(UriInfo uriInfo, Message message) {
+    private String getUriForComments(UriInfo uriInfo, Message message) {
+        URI uri =
+                uriInfo.getBaseUriBuilder().path(MessageResource.class).path(MessageResource.class,
+                        "getCommentResource").path(CommentResource.class).resolveTemplate("messageId", message.getId()).build();
+        return uri.toString();
+    }
+
+    private String getUriForProfile(UriInfo uriInfo, Message message) {
+
+        URI uri = uriInfo.getBaseUriBuilder().path(ProfileResource.class).path(message.getAuthor()).build();
+        return uri.toString();
+    }
+
+    private String getUriForSelf(UriInfo uriInfo, Message message) {
         String uri =
                 uriInfo.getBaseUriBuilder().path(MessageResource.class).path(Long.toString(message.getId())).build().toString();
         message.addLink(uri, "self");
+        return uri;
     }
 
 
