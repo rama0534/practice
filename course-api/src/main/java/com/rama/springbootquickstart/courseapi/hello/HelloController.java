@@ -1,4 +1,4 @@
-package com.rama.springbootquickstart.courseapi;
+package com.rama.springbootquickstart.courseapi.hello;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,6 +8,6 @@ public class HelloController {
 
     @RequestMapping("/hello")
     public String sayHi(){
-        return "Hi";
+        return "Hi!";
     }
 }
