@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1> Hello World!</h1>
+<script>
+
+    //Variables
+    var a = 10;
+    var b;
+    b = "10";
+    console.log('Hello World!');
+    console.log(a);
+    console.log(b);
+    if (a == b) {
+        console.log("a and b are equal");
+    }
+    if (a === b) {
+        console.log("a and b are equal and same datatype");
+    } else console.log("a and b are not same type");
+
+    console.log(typeof a, typeof b);
+
+    //Objects
+    var myObj = {};
+    myObj.prop = "Hello";
+    myObj.prop2 = 123;
+    console.log(myObj.prop, myObj.prop2);
+
+    // Inline Object
+    var myObj2 = {
+        "prop": "hi",
+        "prop2": 456,
+        "objprop": {
+            "innerProp": "Inner Property"
+        }
+    };
+    console.log(myObj2.prop, myObj2["prop2"]);
+    console.log(myObj2);
+    var propertyName = myObj2;
+    console.log(propertyName.prop);
+    console.log(myObj);
+    delete myObj.prop2;
+    console.log(myObj);
+
+    //Arrays
+    var myArray = ["Hello", "world", 23, {}, 45];
+    console.log(myArray);
+    myArray[2] = "!";
+    console.log(myArray);
+    console.log(myArray.length);
+    //To remove an element from last index of Array
+    myArray.pop();
+    console.log(myArray);
+    //To add element into the Array
+    myArray.push(67);
+    console.log(myArray);
+    //To add a new element at index zero
+    myArray.unshift("kk");
+    console.log(myArray);
+    myArray.shift();
+    console.log(myArray);
+
+    //Array for each method
+    var myArray = [10, 20, "Hello", {}];
+
+    var myFunction = function (item) {
+        console.log("For an element " + item);
+    };
+    myArray.forEach(myFunction);
+
+    //Functions
+    //Function can be created in two ways
+    // Declaring function
+    function sayHello(name, lastName) {
+        console.log(arguments);
+        console.log("Hello " + name + lastName);
+    }
+
+    sayHello("Raamaa");
+
+    //Function Expressions
+    var f = function foo() {
+        console.log("Hello!");
+    };
+    f();
+
+    //Anonymous Function Expression
+    var k = function () {
+        console.log("Hi from Anonymous function");
+    }
+    k();
+
+    k = 1;
+    // k();// It will show error like K is not a function.
+
+
+    // Function as a argument
+    var f = function (names) {
+        console.log("Hello" + names);
+    };
+    var execute = function (fn, n) {
+        fn(n);
+    };
+    execute(f, "rama");
+
+    //Functions on Object
+    var myObj3 = {
+        "testProp": true
+    };
+    myObj3.myMethod = function () {
+        console.log("Function in Object!");
+    };
+    myObj3.myMethod();
+
+    //Understanding this Keyword
+    var person = {
+        "firstName": "Raamaa",
+        "lastName": "N.S",
+        "getFullName": function () {
+            return person.firstName + " " + person.lastName + " " + this.firstName + " " + this.lastName;
+        },
+        "addrss": {
+            "street": "123 JS Street",
+            "city": "Mel",
+            "state": "CA"
+        },
+        "isFromState": function (stateName) {
+            return (stateName === this.addrss.state);
+        }
+    }
+    var fullName = person.getFullName();
+    var person2 = person;
+    console.log(person.isFromState("Cg"));
+
+
+    person = {}
+    console.log(person2.getFullName());
+
+
+</script>
+
+</body>
+</html>
