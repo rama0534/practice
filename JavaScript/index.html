@@ -140,6 +140,117 @@
     person = {}
     console.log(person2.getFullName());
 
+    //Scope and closures
+    //Immediately Invoke function Express (IIFE)
+    (function () {
+        var a = 10;
+        var b = 10;
+        console.log(a + b);
+    })();
+
+    //Interpretation and compilation
+
+    var a = 40;
+
+    function outer() {
+        var b = a;
+        console.log(b);
+
+        function inner() {
+            var b = 20;
+            var c = b;
+            console.log(c);
+        }
+
+        inner();
+    }
+
+    outer();
+
+    // Hoisting: Declaring the variables after using.
+    // it will not show any error
+    //but it stores undefined value
+
+    console.log(xyz);
+    abc = 40;
+    uvw++;
+
+    var xyz;
+    var abc;
+    var uvw;
+
+
+    // use Strict
+    // "use strict";
+    var myName = "";
+    myname = "rama"
+    console.log(myName);
+
+    //setTimeout
+    var a = 10;
+    var fn = function () {
+        console.log(a);
+    };
+    setTimeout(fn, 1000);
+
+
+    //The Module pattern
+    function createPerson() {
+        var firstName = "Rama";
+        var lastName = "N.S";
+        var returnObj = {
+            "getFirstName": function () {
+                return firstName;
+            },
+            "getLastName": function () {
+                return lastName;
+            },
+            "setFirstName": function (name) {
+                firstName = name;
+            },
+            "setLastName": function (name) {
+                lastName = name;
+            }
+        };
+        return returnObj;
+    }
+
+    var person = createPerson();
+
+    console.log(person.getFirstName());
+    person.setFirstName("ABC");
+    console.log(person.getFirstName());
+
+    //closures in async callback
+    var i;
+    var print = function () {
+        console.log(i);
+    };
+    for (i = 0; i > 20; i++) {
+
+        setTimeout(print, 1000);
+    }
+
+    // Solving async with closures
+    var i;
+    for(i = 0; i < 10; i++){
+        (function () {
+            var currentValueOfI = i;
+            setTimeout(function (){
+                console.log(currentValueOfI);},1000);
+            })();
+    }
+
+    // Another method of Solving async with closures
+    var i;
+    for(i = 0; i < 10; i++){
+        (function (currentValueOfI) {
+           
+            setTimeout(function (){
+                console.log(currentValueOfI);},1000);
+        })(i);
+    }
+
 
 </script>
 
