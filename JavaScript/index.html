@@ -8,6 +8,8 @@
 <h1> Hello World!</h1>
 <script>
 
+    //Introduction to JavaScript for Developers
+
     //Variables
     var a = 10;
     var b;
@@ -21,7 +23,6 @@
     if (a === b) {
         console.log("a and b are equal and same datatype");
     } else console.log("a and b are not same type");
-
     console.log(typeof a, typeof b);
 
     //Objects
@@ -72,6 +73,8 @@
     };
     myArray.forEach(myFunction);
 
+
+    //Scopes and Closures In-depth 01
     //Functions
     //Function can be created in two ways
     // Declaring function
@@ -135,8 +138,6 @@
     var fullName = person.getFullName();
     var person2 = person;
     console.log(person.isFromState("Cg"));
-
-
     person = {}
     console.log(person2.getFullName());
 
@@ -170,18 +171,15 @@
     // Hoisting: Declaring the variables after using.
     // it will not show any error
     //but it stores undefined value
-
     console.log(xyz);
     abc = 40;
     uvw++;
-
     var xyz;
     var abc;
     var uvw;
 
-
     // use Strict
-    // "use strict";
+    //  "use strict";
     var myName = "";
     myname = "rama"
     console.log(myName);
@@ -216,7 +214,6 @@
     }
 
     var person = createPerson();
-
     console.log(person.getFirstName());
     person.setFirstName("ABC");
     console.log(person.getFirstName());
@@ -233,21 +230,22 @@
 
     // Solving async with closures
     var i;
-    for(i = 0; i < 10; i++){
+    for (i = 0; i < 10; i++) {
         (function () {
             var currentValueOfI = i;
-            setTimeout(function (){
-                console.log(currentValueOfI);},1000);
-            })();
+            setTimeout(function () {
+                console.log(currentValueOfI);
+            }, 1000);
+        })();
     }
 
     // Another method of Solving async with closures
     var i;
-    for(i = 0; i < 10; i++){
+    for (i = 0; i < 10; i++) {
         (function (currentValueOfI) {
-           
-            setTimeout(function (){
-                console.log(currentValueOfI);},1000);
+            setTimeout(function () {
+                console.log(currentValueOfI);
+            }, 1000);
         })(i);
     }
 
