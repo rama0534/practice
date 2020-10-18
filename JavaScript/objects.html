@@ -2,9 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Objects</title>
 </head>
 <body>
-$END$
+<script>
+    var emp1 = {};
+    emp1.firstName = "Michael";
+    emp1.lastName = "Scott";
+    emp1.gender = "M";
+    emp1.designation = "Retail Manager";
+
+    var emp2 = {};
+    emp2.firstName = "Rama";
+    emp2.lastName = "N.S";
+    emp2.gender = "M";
+    emp2.designation = "Assistant Manager";
+
+    function createEmployee(firstName, lastName, gender, designation) {
+        var newObject = {};
+        newObject.firstName = firstName;
+        newObject.lastName = lastName;
+        newObject.gender = gender;
+        newObject.designation = designation;
+        return newObject;
+    }
+
+    var emp3 = createEmployee("Scott", "Morrison", "M", "Prime minister of Australia");
+
+    // using constructor
+    // constructor always have new keyword. constructor starts with capital letter.
+    function Employee(firstName, lastName, gender, designation) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.designation = designation;
+    }
+
+    var emp4 = new Employee("Jacinda", "Ardern", "F", "Prime minister of New Zealand");
+</script>
 </body>
 </html>

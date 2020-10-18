@@ -2,9 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Functions</title>
 </head>
 <body>
-$END$
+<script>
+    // There are four ways to call a function
+
+    //1.Regular way
+    function foo() {
+        console.log("Regular way of calling");
+    }
+
+    foo();
+
+    //2.Constructor
+    function FooConstructor() {
+        console.log();
+    }
+
+    var fun1 = new FooConstructor("Calling the function in constructor mode");
+
+    //3.Object
+    var obj = {};
+    obj.foo = function () {
+        console.log("Using object");
+    };
+    obj.foo();
+
+    //4.
+
+    function Bicycle(cadence, speed, gear, tirePressure) {
+        this.cadence = cadence;
+        this.speed = speed;
+        this.gear = gear;
+        this.tirePressure = tirePressure;
+        this.inflateTires = function () {
+            this.tirePressure += 3;
+        }
+        console.log(cadence, speed, gear, tirePressure);
+    }
+
+    var bicycle1 = new Bicycle(50, 20, 4, 35);
+    bicycle1.inflateTires();
+    var bicycle2 = new Bicycle(50, 20, 4, 30);
+    bicycle2.inflateTires();
+
+
+    // Prototypes
+    // when JS execute a function it creates two objects.
+    // first one it function itself and second one is prototype
+
+    function foo12() {}
+
+    //
+    function Employee(name) { this.name = name;}
+
+    Employee.prototype.getName = function () { return this.name;};
+    var emp1 = new Employee("Jim");
+    emp1.getName()
+
+    function Manager(name, dept) {
+        this.name = name;
+        this.dept = dept;
+    }
+
+    Manager.prototype.getDept = function () { return this.dept;};
+    var mgr = new Manager("Michel", "Sales");
+    mgr.getDept();
+    mgr.__proto__.__proto__ = Employee.prototype;
+    mgr.getName()
+
+
+</script>
 </body>
 </html>
