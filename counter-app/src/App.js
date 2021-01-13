@@ -13,22 +13,21 @@ class App extends Component {
 
         ]
     };
-    constructor (){
-      super();
-      console.log("App -  Constructor");
-    }
+    // constructor (){
+    //   super();
+    //   console.log("App -  Constructor");
+    // }
 
-    componentDidMount(){
-      console.log("App - Mounted");
-    }
+    // componentDidMount(){
+    //   console.log("App - Mounted");
+    // }
 
   handleIncrement = counter => {
         const counters = [...this.state.counters];
         const index = counters.indexOf(counter);
         counters[index] = {...counter};
         counters[index].value++;
-        this.setState({counters});
-        
+        this.setState({counters});   
     };
     handleDecrement = counter => {
         const counters = [...this.state.counters];
@@ -47,7 +46,7 @@ class App extends Component {
          this.setState({counters});
     };
     render(){
-      console.log("App - Rendered");
+      // console.log("App - Rendered");
       return (
      <React.Fragment>
        <NavBar totalCounters={this.state.counters.length} activeCounters={this.state.counters.filter(c => c.value>0).length}/> 

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 class Counter extends Component {
-    componentDidUpdate(PrevProps, prevState){
-        console.log("PrevPros", PrevProps );
-        console.log("PrevState", prevState );
+    // componentDidUpdate(PrevProps, prevState){
+    //     console.log("PrevPros", PrevProps );
+    //     console.log("PrevState", prevState );
 
-    }
-    componentWillUnmount(){
-        console.log("Component unmounted");
-    }
+    // }
+    // componentWillUnmount(){
+    //     console.log("Component unmounted");
+    // }
     render() { 
         console.log("Counter - Rendered")
         return (
@@ -34,6 +34,7 @@ class Counter extends Component {
                 >
                     X
                 </button>
+                 
                 </div>
             </div>
             );
