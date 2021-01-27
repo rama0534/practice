@@ -12,9 +12,9 @@ const articleInfo = {
 }
 const app = express();
 app.use(express.json());
-
-app.get('/hello', (req, res) => res.send('Hello!'));
-app.get('/hello/:name', (req, res) => res.send(`Hello ${req.params.name}!`));
-app.post('/hello', (req, res) => res.send(`Hello ${req.body.name}!`));
-
+app.post('/api/articles/:name/upvote', (req, res) => {
+    const articleName = req.params.name;
+    articleInfo[articleName].upvotes += 1;
+    res.status(200).send(`${articleName} now has ${articleInfo[articleName].upvotes} upvotes`);
+})
 app.listen(8000, () => console.log('Listening on port 8080'));
