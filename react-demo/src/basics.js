@@ -81,22 +81,22 @@ const combine3 = {...firstName, ...position, location:'Australia'};
 console.log(combine3);
 
 //Classes and inheritance
-// class Person {
-//     constructor(name){
-//         this.name = name;
-//     }
-//     walk(){
-//         console.log("walk");
-//     }
-// }
-// class Teacher extends Person{
-//     constructor(name, degree) {
-//         super(name);
-//         this.degree = degree;
-//     }
-//     teach() {
-//         console.log("teach");
-//     }
-// }
+class Person {
+    constructor(name){
+        this.name = name;
+    }
+    walk(){
+        console.log("walk");
+    }
+}
+class Teacher extends Person{
+    constructor(name, degree) {
+        super(name);
+        this.degree = degree;
+    }
+    teach() {
+        console.log("teach");
+    }
+}
 
 const teacher = new Teacher("Rama", "MTech");
