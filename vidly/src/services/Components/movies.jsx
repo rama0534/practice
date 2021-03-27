@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import Like  from "./common/like"
+import Like  from "./common/like";
+import Pagination from "../Components/pagination"
 import { getMovies } from '../fakeMovieService';
 
 class Movies extends Component {
     state = { 
-        movies: getMovies()
+        movies: getMovies(),
+        currentPage: 1,
+        pageSize: 4
      };
      heandleDelete = (movie) => {
           const movies = this.state.movies.filter(m => m._id !== movie._id) ;
@@ -17,8 +20,12 @@ class Movies extends Component {
          movies[index].liked = !movies[index].liked;
          this.setState({ movies });
      };
+     handlePageChange = (page) => {
+         this.setState({currentPage : page})
+     };
     render() { 
         const {length: count} = this.state.movies;
+        const {pageSize, currentPage} = this.state;
         if (count === 0) return <p>There are no movies to display.</p>
         return (
             <React.Fragment>
@@ -44,9 +51,14 @@ class Movies extends Component {
                          {/* <td><i className="fa fa-heart"  /></td>  */}
                         <td><button onClick={() => this.heandleDelete(movie)} className="btn btn-danger btn-sm">Delete</button></td>
                     </tr>) )}
-                    
                 </tbody>
-            </table></React.Fragment>
+            </table>
+            <Pagination itemsCount={count}
+                     pageSize={pageSize}
+                      currentPage={currentPage} 
+                      onPageChange={this.handlePageChange}>
+                </Pagination>
+            </React.Fragment>
         );
     }
 }
