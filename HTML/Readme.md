@@ -50,10 +50,7 @@ Links Tag
 
 Code  | Defination 
 ------------- | ------------
-``` <a href="about.html">About</a> ```| To navigate to another page. 
-
-```<a href="#section-css">CSS</a> ``` | Jump to the tag which id is ```#section-css``` 
-
-
+``` <a href="about.html">About</a> ```| To navigate to another page.
+```<a href="#section-css">CSS</a> ``` | Jump to the tag which id is ```#section-css```
 
  
