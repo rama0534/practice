@@ -1,0 +1,59 @@
+#fourthparagraph {
+    color: blueviolet;
+}
+
+a:visited, a:link {
+    color: dodgerblue; 
+}
+
+a:hover, a:focus {
+    color: blueviolet;
+}
+
+ul li:nth-child(odd){
+    color: blue;
+}
+
+p::first-letter {
+    font-size: 140%;
+    font-weight: bold;
+}
+p::first-line {
+    font-weight: bold;
+}
+::selection {
+    color: yellow;
+    background-color: black;
+}
+p::after{
+    content: "...........";
+}
+
+.header4 {
+    color: red;
+    text-decoration: underline;
+}
+
+#inheritance {
+    border: 1px solid red;
+    color: blue;
+}
+strong {
+    color: initial;
+    border: inherit;
+}
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: coral;
+    box-shadow: 0 0 30px gray;
+}
+h2 {
+    color: white;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+.gridbox {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, yellow, blue);
+}
