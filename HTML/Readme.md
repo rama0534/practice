@@ -155,7 +155,7 @@ horizontal and vertical distance of the shadow from the element. The third value
 blur radius) determines the softness of the border. We can specify the color as the fourth
 value
 
-#### Basic Selectors
+ Basic Selectors
 ----------
 Selectors | Description 
 ------- | -------
@@ -168,7 +168,7 @@ a[href^=“https”] | Anchors whose href starts with https
 a[href$=“.com”] | Anchors whose href ends with .com
 
 ---------------
-#### Relational Selectors
+Relational Selectors
 -----------
 
 Selectors | Description 
@@ -179,7 +179,8 @@ Selectors | Description
 #products ~ p | All p elements after #products (siblings)
 
 -----------
-#### Pseudo-class Selectors
+Pseudo-class Selectors
+----
 
 Selector | Description 
 -------- | -------------
@@ -193,6 +194,7 @@ article :nth-child(even) | Every even child
 
 ---------
 Pseudo-element Selectors
+-----
 
 Selector | Description
 ------ | ---------
@@ -228,6 +230,7 @@ Gradients
 
 ------
 Borders
+----- 
 
 - border: 10px solid blue;
 - border-width: 10px 20px 30px 40px; /* top right bottom left */
@@ -236,6 +239,7 @@ Borders
 
 ---------
 Shadows
+----
 
 - box-shadow: 10px 10px;
 - box-shadow: 10px 10px grey;
