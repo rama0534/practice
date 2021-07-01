@@ -19,3 +19,10 @@ table {
     border-radius: 20px;
     box-shadow: 7px 9px 0px lightgrey;;
 }
+
+.navbar {
+      position: fixed;
+      z-index: 99999;
+      width: 100vw;
+      top: 0;
+  }
