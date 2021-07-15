@@ -397,7 +397,66 @@ visibility: hidden;   Hides the element but keeps the reserved space
  
 ```
   
-    
+### Typography 
+-----
+#### Summary 
+- Typography is the art of creating beautiful and easy-to-read text. Given that 95% of the content on the web is text, as a front-end developer, you must ensure that the text on your web pages is easy to read and visually appealing on various screen sizes.
+- Fonts fall into three main categories: Serif, Sans-serif and Monospace. Serif fonts have a line/stroke at the edges of their characters. They’re more professional and serious. Sans-serif fonts don’t have those edges. They’re more modern, warm and friendly. Monospace fonts have equal-width characters. They’re often used in displaying code.
+- The default color for the body text is pure black (#000). It’s best to change it to dark grey. 
+- We can use the font-family property to set the font for an element. We should set this property to a font stack which contains multiple fonts as fallbacks. 
+- In the past, we used web safe fonts because they’re available on almost all computers. These days, however, we can easily embed custom fonts. 
+- Font files come in a variety of different formats: TTF, OTF, EOT, WOFF and WOFF 2.0. Out of these, WOFF and WOFF 2.0 are recommended for the web because they’re more compressed and can be downloaded in less time. 
+- We can convert any font file to a WOFF file on fontsquirrel.com.
+- To embed a custom font, we should first register it using the @font-face rule. 
+- When using a custom font, the user may experience a flash of unstyled text (FOUT). Some browsers display text using a fallback font while downloading the custom font and swap it once the custom font is available. This may cause a layout shift depending on how the content is structured. Some browsers hide the text initially while downloading the custom font. This causes a flash of invisible text (FOIT). Using the font-display property we can tell the browser how to handle this situation.
+- Using font services we can get access to thousands of beautiful fonts with zero or minimal cost. Google Web Fonts is the most popular and free font service. When using these services, fonts and @font-face rules are served from the provider’s servers. 
+- A common practice for content-heavy websites is to use the system font stack which represents the default font used by an operating system. With the system font stack, we achieve a better performance because no fonts need to be downloaded and the FOUT/FOIT doesn’t happen either. Plus, the page looks more familiar to the user because they see the same default font used by their device. On the flip side, the default font varies from one device to another. - It’s best to size fonts using the rem unit. This will set the font size relative to the font size of the root (html) element. Using media queries, we can resize the base font size, and as a result, the font size for all elements will be re-calculated with no extra code. 
+- It’s best to use the rem unit for vertical margins. For headings, the top margin should be noticeably greater than the bottom margin so the heading gets separated from the text before and gets connected to the text after. 
+- The law of proximity describes how humans perceive the connection between objects. Objects that are closer are perceived to be related. 
+- Using the line-height property we can specify the height of lines. It’s best to set this property to a unitless value around 1.5. This value will be multiplied by the font size of the current element so we don’t need to remember to change the line height if we modify the font size.
+- The three properties used for horizontal spacing are: letter-spacing, word-spacing, and width. It’s often better to apply a negative letter spacing to headings so they look more compact. 
+- The ideal line length is about 60-70 characters. We can achieve that by applying a width of 50ch. The ch unit represents the width of the 0. 50 zeroes roughly represents 60-70 characters because some characters (like i and 1) are more narrow than 0. 
+- Using the Network tab in Chrome DevTools, we can simulate a slow connection. This is called Network Throttling. 
+- Browsers store some assets behind web pages in a permanent storage called cache. It’s essentially somewhere on the disk. The cache can always be cleared.
+
+#### CSS Cheat Sheet
+### Styling Fonts
+
+```
+font-family: Arial, Helvetica, sans-serif; 
+font-size: 1rem;
+font-weight: bold; 
+font-style: italic; 
+```
+### Vertical Spacing
+```
+margin: 3rem 0 1rem; 
+line-height: 1.5;
+```
+### Horizontal Spacing
+```
+letter-spacing: -1px;
+word-spacing: 2px;
+width: 50ch; 
+```
+ ### Formatting Text
+ ```
+ text-align: center;
+ text-indent: 1rem;
+ text-decoration: underline; 
+ text-transform: uppercase;
+ white-space: nowrap;
+ direction: rtl;
+ ``` 
+   
+### Multi-column Text
+``` 
+column-count: 2;
+column-gap: 2rem;
+column-rule: 3px dotted #999;
+```
+
+
 
 
 

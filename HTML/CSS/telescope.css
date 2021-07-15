@@ -1,0 +1,29 @@
+
+.banner {
+    background-image: url(/images/gelaxy.jpeg);
+    height: 100vh;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+p {
+    background-color: #b3b1b1;
+    font-weight: 300;
+
+}
+
+h1 {
+    font-weight: 900;
+    word-spacing: 7px;
+    text-shadow: 7px 1px 7px black;
+}
+.inside {
+    font-family: Poppins, 'Courier New', Courier, monospace;
+    max-width: 800px;
+    margin: auto;
+
+    /* display: inline-block; */
+}
+ 
