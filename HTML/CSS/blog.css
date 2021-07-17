@@ -1,0 +1,47 @@
+html{
+    font-size: 62.5%;
+
+}
+body {
+    margin: 10px 20px;
+    font-size: 1.8rem;
+}
+.container {
+    /* margin: 10px 20px 10px 20px; */
+    margin-left: 10em;
+    margin-right: 10em;
+    border: 2px;
+}
+.ingredients {
+    column-count: 2;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family:  Lato, Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    color: black;
+    /* margin: 1rem auto; */
+}
+h1 {
+    font-size: 5.6rem;
+}
+h2 {
+    font-size: 4.3rem;
+}
+img {
+    width: 80%;
+}
+
+.procedure {
+    width: 80%;
+
+}
+.box {
+      width: 24rem;
+      height: 24rem;
+      background-color: #fdfcf9;
+      display: inline-block;
+      margin: 5px;
+      overflow: auto;
+      text-align: justify;
+      /* border: 10px solid mediumslateblue; */
+}
