@@ -1,5 +1,5 @@
 html {
-    font-size: 62.5%;
+    font-size: 30.5%;
 }
 body {
   color: #222;
@@ -7,6 +7,11 @@ body {
   font-size: 1.8rem;
   line-height: 1.5;
   padding: 2rem;
+  /* background: url(../images/mover2.jpeg); */
+  background-position: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 body {
@@ -14,7 +19,7 @@ body {
     font-size: 1.8rem;
 }
 
-
+ 
 .container {
     /* margin: 10px 20px 10px 20px; */
     margin-left: 10em;
@@ -22,7 +27,7 @@ body {
     border: 2px;
 }
 .ingredients {
-    column-count: 2;
+    /* column-count: 2; */
     color: #ff9800;
     background-color: #ffffff;
     border: 5px solid #ff9800;
@@ -32,6 +37,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 900;
     color: black;
     background-color: #ff9800;
+    text-align: center;
     /* margin: 1rem auto; */
 }
 h1 {
@@ -41,16 +47,20 @@ h1 {
 h2 {
     font-size: 4.3em;
 }
+
+h5 {
+    font-size: 2.4em;
+}
 img {
     width: 80%;
 }
 
 .procedure {
-    width: 80%;
+    width: 100%;
 
 }
 .box {
-      width: 22rem;
+      width: 31rem;
       height: 24rem;
       background-color: #ffffff;
       display: inline-block;
@@ -59,13 +69,28 @@ img {
       text-align: left;
       border: 10px solid #ff9800;
       color: #ff9800;
+      text-align: center;
 }
 
 .form {
     margin: 1rem;
+    width: 80vh;
 }
 .food {
     border: 9px solid #ff9800;
     clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
 }
 
+/* @media screen and (max-width: 992px) {
+  body {
+     
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: olive;
+  }
+  html {
+      font-size: 20.5%;
+  }
+} */
