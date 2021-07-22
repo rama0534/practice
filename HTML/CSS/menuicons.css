@@ -1,0 +1,44 @@
+html {
+  font-size: 62.5%;
+}
+
+.menu {
+    background: #2a2138;
+    width: 20%;
+    /* height: 100vh; */
+
+}
+
+.menu {
+  background: #2a2138;
+  color: #cfc6dc;
+}
+.menu, ul {
+    list-style: none;
+    padding-left: 0;
+}
+.menu li {
+    padding: 1.5rem;
+}
+
+.menu a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu .fas {
+  margin-right: 1rem;
+  width: 2rem;
+  text-align: center;
+}
+
+.menu li:hover, .menu .active {
+  background: #221a2e;
+  color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .menu {
+    width: 20%;
+    height: 100vh;
+  }
+}
