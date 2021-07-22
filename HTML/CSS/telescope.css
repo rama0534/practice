@@ -1,29 +1,69 @@
-
-.banner {
-    background-image: url(/images/gelaxy.jpeg);
-    height: 100vh;
-    background-size: cover;
-    text-align: center;
-    color: white;
-    display: flex;
-    flex-direction: column;
+html {
+  font-size: 62.5%;
 }
-p {
-    background-color: #b3b1b1;
-    font-weight: 300;
 
+body {
+  font-family: Poppins, Arial, Helvetica, sans-serif;
 }
 
 h1 {
-    font-weight: 900;
-    word-spacing: 7px;
-    text-shadow: 7px 1px 7px black;
+  font-weight: 900;
+  font-size: 5rem;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0 #000;
+  word-spacing: 1.5rem;
 }
-.inside {
-    font-family: Poppins, 'Courier New', Courier, monospace;
-    max-width: 800px;
-    margin: auto;
 
-    /* display: inline-block; */
+.banner {
+  align-items: center;
+  /* I've specified the reptition of the background (no-repeat) as part of setting the background. */
+  /* background: url(../images/background_w320.jpg) no-repeat; */
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.banner .tagline {
+  background: rgba(0, 0, 0, 0.6);
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  padding: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .banner {
+    background: url(../images/background_w853.jpg) no-repeat;
+    background-size: cover;
+    
+  }
+  .banner .tagline {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .banner {
+    background: url(../images/background_w1228.jpg) no-repeat;
+    background-size: cover;
+  }
+  h1 {
+    font-size: 6rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .banner {
+    background: url(../images/background_w1440.jpg) no-repeat;
+    background-size: cover;
+  }
+  h1 {
+    font-size: 9rem;
+  }
 }
  
