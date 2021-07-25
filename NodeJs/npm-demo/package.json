@@ -1,0 +1,15 @@
+{
+  "name": "npm-demo",
+  "version": "1.0.0",
+  "description": "\"Demo Project\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rama Nayudu Sadam",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.13.3",
+    "underscore": "^1.13.1"
+  }
+}

@@ -19,3 +19,23 @@
 - Node has a few built-in modules that enable us to work with the file system, path objects, network, operating system, etc. 
 - EventEmitter is one of the core classes in Node that allows us to raise (emit) and handle events. Several built-in classes in Node derive from EventEmitter. 
 - To create a class with the ability to raise events, we should extend EventEmitter: class Logger extends EventEmitter { } 
+
+## Node Package Manager (NPM)
+
+- Every Node application has a package.json file that includes metadata about the application. This includes the name of the application, its version, dependencies, etc.
+- We use NPM to download and install 3rd-party packages from NPM registry
+- All the installed packages and their dependencies are stored under node_modules folders. This folder should be excluded from the source control.
+- Node packages follow semantic versioning: major.minor.patch.
+
+### Useful NPM commands are:
+
+Command  |  Description
+------------ |--------
+``` npm i <packageName> ``` |  Install a package
+```npm i <packageName>@<version> ``` | Install a specific version of a package
+``` npm i <packageName> —save-dev ``` | Install a package as a development dependency
+``` npm un <packageName> ``` |  Uninstall a package
+``` npm list —depth=0 ``` |  List installed packages 
+``` npm outdated ``` |  View outdated packages
+``` npm update ``` | Update packages
+ Use ```-g```  flag |  To install/uninstall packages globally, 
