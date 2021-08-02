@@ -4,12 +4,17 @@
   "description": "\"Express Demo\"",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Rama Nayudu Sadam",
   "license": "ISC",
   "dependencies": {
+    "config": "^3.3.6",
+    "debug": "^4.3.2",
     "express": "^4.17.1",
-    "joi": "^13.1.0"
+    "joi": "^13.1.0",
+    "jshint": "^2.13.0",
+    "morgan": "^1.10.0"
   }
 }
