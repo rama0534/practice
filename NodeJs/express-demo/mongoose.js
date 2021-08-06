@@ -6,11 +6,39 @@ const mongoose = require('mongoose');
     .catch(err => console.log('Could not conncted to MongoDB', err));
 
 const CourseSchema = new mongoose.Schema({
-        name: String,
-        author: String,
-        tags: [ String ],
-        date: { type:Date, default:Date.now},
-        isPublished: Boolean
+        name: {type:String, required:true},
+        isPublished: Boolean,
+        author: {type:String, required:function(){ return this.isPublished}},
+        // tags: {
+        //     type:Array,
+        //     required:true,
+        //     validate: {
+        //         validator: function(v){
+        //             return v && v.legth >0;
+        //         }, message: 'A course should have atleast one tag.'
+        //     }
+        // },
+        // Async
+        tags: {
+            type: Array,
+            required:true,
+            validate: {
+                isAsync: true,
+                validator: function(v, callback){
+                    setTimeout(() => {
+                        const result = v && v.length > 0;
+                        callback(result);
+                    }, 4000);
+                },
+                message: 'A course should have atleast one TAG'
+            }
+        },
+        category: {
+            type: String,
+            required: true,
+            enum: ['Web', 'mobile', 'network']
+        },
+        date: { type:Date, default:Date.now}
     });
 const Course = mongoose.model('Course', CourseSchema);
 
@@ -18,16 +46,17 @@ async function createCourse() {
     try{
         const course = new Course({
             name: 'ReactJS Course',
+            isPublished: true,
             author: 'Rama',
-            tags: ['React', 'frontend'],
-            isPublished: true
+            category: 'Web',
+            // tags: ['React', 'frontend']
         });
     
         const result = await course.save();
         console.log(result);
     }
     catch(err){
-        console.log('Error',err);
+        console.log(err.message);
 
     }
 }
@@ -41,7 +70,7 @@ async function getCourses() {
         console.log(courses);
     }
     catch(err){
-        console.log("Error", error);
+        console.log("Error", error.message);
     }
 }
 
@@ -100,16 +129,16 @@ async function removeCourseMethodTwo(id){
     console.log(course);
 }
 
-removeCourseMethodTwo('6108c0cc8c5b664514a21cc9');
+// removeCourseMethodTwo('6108c0cc8c5b664514a21cc9');
 
 
 
-removeCourse('6108c0cc8c5b664514a21cc9');
+// removeCourse('6108c0cc8c5b664514a21cc9');
 
 createCourse();
 
-getCourses();
+// getCourses();
 
-updateUser('6108c0cc8c5b664514a21cc9');
-update('6108c0cc8c5b664514a21cc9');
-updateSecondMethod('6108c0cc8c5b664514a21cc9');
+// updateUser('6108c0cc8c5b664514a21cc9');
+// update('6108c0cc8c5b664514a21cc9');
+// updateSecondMethod('6108c0cc8c5b664514a21cc9');

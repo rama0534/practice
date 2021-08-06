@@ -6,7 +6,7 @@ mongoose.connect('mongodb://localhost/mongo-exercises', { useNewUrlParser: true,
 
 
 const CourseSchema = new mongoose.Schema({
-    name: String,
+    name: {type:String, required:true},
     author: String,
     tags:[ String ],
     date: {type:Date, default:Date.now},
