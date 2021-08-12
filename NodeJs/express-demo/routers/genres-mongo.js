@@ -25,7 +25,7 @@ router.post('/', async(req, res) => {
     try{
         const result = validateGenre(req.body);
         if(result.error) return res.status(400).send(result.error.details[0].message);
-        let genre = new Genre ({ genre: req.body.genre })
+        let genre = new Genre ({ name: req.body.name })
         genre = await genre.save();
         res.send(genre);
     }
@@ -38,7 +38,7 @@ router.put('/:id', async(req, res) => {
     try{
         const result = validateGenre(req.body);
         if(result.error) return res.status(400).send(result.error.details[0].message);
-        const genre = await Genre.findByIdAndUpdate(req.params.id, {genre: req.body.genre}, {new: true});
+        const genre = await Genre.findByIdAndUpdate(req.params.id, {name: req.body.name}, {new: true});
         if(!genre) return res.status(400).send(`The ganre with given ID ${req.params.id} was not found`);
         res.send(genre);
     }

@@ -13,19 +13,22 @@ const genres = require('./routers/exercise');
 const genresmongo = require('./routers/genres-mongo')
 const customer = require('./routers/customer')
 const mongoose = require('mongoose');
+const movies = require('./routers/movies')
 app.use(express.json());
 
 // app.use(express.urlencoded({extened: true}));
 app.use(express.static('public'));
-mongoose.connect('mongodb://localhost/genres', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost/playground', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("Connected to Genres Database"))
     .catch(err => console.log("Could not connect to the Genres Database",err));
 //Middleware 
 app.use(logger);
+mongoose.set('useFindAndModify', false);
 app.use('/api/courses', courses);
 app.use('/api/genres', genres);
 app.use('/api/genres-mongodb', genresmongo);
 app.use('/api/customer', customer);
+app.use('/api/movies', movies)
 
 
 console.log(`Application configure name ${config.get('name')}`);

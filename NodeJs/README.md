@@ -274,3 +274,4 @@ const course = await Course.findByIdAndRemove(id)
             set: v => Math.round(v)    
           }
 ```
+
