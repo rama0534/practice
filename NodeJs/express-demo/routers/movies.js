@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Movie, validateMovie } = require('../models/movies');
+const { Movie, validateMovie } = require('../models/movie');
 const { Genre } = require('../models/genres-mongo')
 
 router.get('/', async(req, res) => {
@@ -20,13 +20,13 @@ router.post('/', async(req, res) => {
             if(result.error) return res.status(400).send(result.error.details[0].message);
             const genre = await Genre.findById(req.body.genreId);
             if (!genre) return res.status(400).send('Invalid genre.');
-            let movie = new Movie ({
+            const movie = new Movie ({
                                         title: req.body.title,
                                         genre: {
                                             _id: genre._id,
                                             name: genre.name
                                         },
-                                        numberInstack: req.body.numberInstack,
+                                        numberInstock: req.body.numberInstock,
                                         dayRentalRate: req.body.dayRentalRate
             })
             await movie.save();
@@ -59,7 +59,7 @@ router.put('/:id', async(req, res) => {
                                                                             _id: genre._id,
                                                                             name: genre.name
                                                                         },
-                                                                        numberInstack: req.body.numberInstack,
+                                                                        numberInstock: req.body.numberInstock,
                                                                         dayRentalRate: req.body.dayRentalRate
                                                                     });
         if(!movie) return res.status(400).send(`Invalid Movie id: ${req.params.id}`);

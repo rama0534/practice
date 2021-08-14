@@ -13,7 +13,9 @@
     "config": "^3.3.6",
     "debug": "^4.3.2",
     "express": "^4.17.1",
+    "fawn": "^2.1.5",
     "joi": "^13.1.0",
+    "joi-objectid": "^3.0.1",
     "jshint": "^2.13.0",
     "mongoose": "^5.13.5",
     "morgan": "^1.10.0"
