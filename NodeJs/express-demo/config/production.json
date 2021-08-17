@@ -3,5 +3,6 @@
     "mail" : {
         "host" : "prod-mail-service",
         "password" : "app_password"
-    }
+    },
+    "jwtPrivateKey" : "movie_jwtPrivateKey"
 }

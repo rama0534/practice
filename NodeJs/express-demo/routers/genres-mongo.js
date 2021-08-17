@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const { Genre, validateGenre } = require('../models/genres-mongo');
+const auth = require('../Middleware/auth');
+const admin = require('../Middleware/admin');
 
 router.get('/', async(req, res) => {
     try{
@@ -21,8 +23,9 @@ router.get('/:id', async(req, res) => {
         console.log("error ", err.message);
     }
 });
-router.post('/', async(req, res) => {
+router.post('/', auth, async(req, res) => {
     try{
+        console.log("genres post");
         const result = validateGenre(req.body);
         if(result.error) return res.status(400).send(result.error.details[0].message);
         let genre = new Genre ({ name: req.body.name })
@@ -47,7 +50,7 @@ router.put('/:id', async(req, res) => {
     }
 });
 
-router.delete('/:id', async(req, res) => {
+router.delete('/:id', [auth, admin], async(req, res) => {
     try{
         const genre =  await Genre.findByIdAndRemove(req.params.id);
         if(!genre) return res.status(400).send(`The genre with the given ID ${req.params.id} was not found`);

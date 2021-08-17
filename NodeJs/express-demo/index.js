@@ -15,6 +15,15 @@ const customers = require('./routers/customers')
 const mongoose = require('mongoose');
 const movies = require('./routers/movies')
 const rental = require('./routers/rentals');
+const user = require('./routers/users');
+const auth = require('./routers/auth');
+
+if(!config.get('jwtPrivateKey')){
+    console.error("Fetal error");
+    process.exit(1);
+}
+
+
 app.use(express.json());
 
 // app.use(express.urlencoded({extened: true}));
@@ -30,11 +39,14 @@ app.use('/api/genres-mongodb', genresmongo);
 app.use('/api/customer', customers);
 app.use('/api/movies', movies);
 app.use('/api/rentals', rental);
+app.use('/api/users', user);
+app.use('/api/auth', auth);
 
 
 console.log(`Application configure name ${config.get('name')}`);
 console.log(`Application configure name ${config.get('mail.host')}`);
-// console.log(`Mail password ${config.get('mail.password')}`);
+console.log(`Mail password ${config.get('mail.password')}`);
+console.log(`Private Key ${config.get('jwtPrivateKey')}`);
 
 if(app.get('env') === 'development'){
     app.use(morgan('tiny'));

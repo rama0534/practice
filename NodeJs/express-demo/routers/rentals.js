@@ -5,6 +5,7 @@ const { Movie } = require('../models/movie')
 const mongoose = require('mongoose');
 const router = express.Router();
 const { Rental, validateRental } = require('../models/rental');
+const auth = require('../Middleware/auth');
 Fawn.init(mongoose);
 
 router.get('/', async(req, res) => {
@@ -12,7 +13,7 @@ router.get('/', async(req, res) => {
     res.send(rentals);
 });
 
-router.post('/', async(req, res) => {
+router.post('/', auth, async(req, res) => {
     try{
         const result = validateRental(req.body);
         if(result.error) return res.status(400).send(result.error.details[0].message);
