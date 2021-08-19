@@ -380,3 +380,33 @@ const token = user.generateAuthToken();
 - Implement authorization using a middleware function. Return a 401 error (unauthorized) if the client doesn’t send a valid token. Return 403 (forbidden) if the user provided a valid token but is not allowed to perform the given operation.
 - You don’t need to implement logging out on the server. Implement it on the client by simply removing the JWT from the client. 
 - Do not store a JWT in plain text in a database. This is similar to storing users’ passports or drivers license in a room. Anyone who has access to that room can steal these passports. Store JWTs on the client. If you have a strong reason for storing them on the server, make sure to encrypt them before storing them in a database.
+
+### Handling and Logging Errors
+
+- Our applications don’t run in an ideal world. Unexpected errors can happen as a result of bugs in our code or issues in the running environment. For example, our MongoDB server may shut down, or a remote HTTP service we call may go down.
+- As a good developer, you should count for these unexpected errors, log them and return a proper error to the client. 
+- Use the Express error middleware to catch any unhandled exceptions in the “request processing pipeline”.
+- Register the error middleware after all the existing routes: 
+``` 
+app.use(function(err, req, res, next) {    
+    // Log the exception and return a friendly error to the client.     
+    res.status(500).send(‘Something failed’);
+  });
+```
+
+- To pass control to the error middleware, wrap your route handler code in a try/catch block and call next().
+```
+try {     
+      const genres = await Genre.find();   
+      ...
+   } 
+catch(ex) {
+            next(ex); 
+      });
+```
+- Adding a try/catch block to every route handler is repetitive and time consuming. Use express-async-errors module. This module will monkey-patch your route handlers at runtime. It’ll wrap your code within a try/catch block and pass unhandled errors to your error middleware.
+- To log errors use winston. 
+- Winston can log errors in multiple transports. A transport is where your log is stored. 
+- The core transports that come with Winston are Console, File and Http. There are also 3rd-party transports for storing logs in MongoDB, CouchDB, Redis and Loggly. 
+- The error middleware in Express only catches exceptions in the request processing pipeline. Any errors happening during the application startup (eg connecting to MongoDB) will be invisible to Express. 
+- Use process.on(‘uncaughtException’) to catch unhandled exceptions, and process.on(‘unhandledRejection’) to catch rejected promises. - As a best practice, in the event handlers you pass to process.on(), you shouldlog the exception and exit the process, because your process may be in an unclean state and it may result in more issues in the future. It’s better to restart the process in a clean state. In production, you can use a process manager to automatically restart a Node process. You’ll learn about that later in the course.

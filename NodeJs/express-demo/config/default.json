@@ -1,5 +1,9 @@
 {
     "name" : "My Express App",
-    "jwtPrivateKey" : "movie_jwtPrivateKey"
+    "jwtPrivateKey" : "movie_jwtPrivateKey",
+    "mail" : {
+        "host" : "prod-mail-service",
+        "password" : "app_password"
+    }
 
 }

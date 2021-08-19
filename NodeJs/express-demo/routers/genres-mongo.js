@@ -3,15 +3,16 @@ const router = express.Router();
 const { Genre, validateGenre } = require('../models/genres-mongo');
 const auth = require('../Middleware/auth');
 const admin = require('../Middleware/admin');
+// const asyncMiddleware = require('../middleware/async');
 
-router.get('/', async(req, res) => {
-    try{
-        const genres = await Genre.find();
-        res.send(genres);
-    }
-    catch(err){
-        console.log("error ", err);
-    }
+// router.get('/', asyncMiddleware(async(req, res, next) => {
+//     const genres = await Genre.find();
+//     res.send(genres);
+// }));
+router.get('/',  async(req, res, next) => {
+    // throw new Error('Could not get genre.');
+    const genres = await Genre.find();
+    res.send(genres);
 });
 router.get('/:id', async(req, res) => {
     try{
@@ -25,7 +26,6 @@ router.get('/:id', async(req, res) => {
 });
 router.post('/', auth, async(req, res) => {
     try{
-        console.log("genres post");
         const result = validateGenre(req.body);
         if(result.error) return res.status(400).send(result.error.details[0].message);
         let genre = new Genre ({ name: req.body.name })

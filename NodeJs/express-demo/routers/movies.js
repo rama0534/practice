@@ -66,7 +66,7 @@ router.put('/:id', async(req, res) => {
         res.send(movie);
     }
     catch(err){
-        console.log("error", err)
+        console.log("error", err);
     }
 });
 router.delete('/:id', async(req, res) => {
