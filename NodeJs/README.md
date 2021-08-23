@@ -410,3 +410,54 @@ catch(ex) {
 - The core transports that come with Winston are Console, File and Http. There are also 3rd-party transports for storing logs in MongoDB, CouchDB, Redis and Loggly. 
 - The error middleware in Express only catches exceptions in the request processing pipeline. Any errors happening during the application startup (eg connecting to MongoDB) will be invisible to Express. 
 - Use process.on(‘uncaughtException’) to catch unhandled exceptions, and process.on(‘unhandledRejection’) to catch rejected promises. - As a best practice, in the event handlers you pass to process.on(), you shouldlog the exception and exit the process, because your process may be in an unclean state and it may result in more issues in the future. It’s better to restart the process in a clean state. In production, you can use a process manager to automatically restart a Node process. You’ll learn about that later in the course.
+
+### Unit Testing
+- Automated testing is the practice of writing code to test our code. 
+- Automated tests help us deliver software with fewer bugs and of better quality. They also help us refactor our code with confidence.
+- Jest is a new trending popular testing framework recommended by Facebook. It comes with everything you need to write automated tests.
+- We have 3 types of automated tests:
+
+  - ***Unit tests:***  Test a unit of an application without external resources (eg db)
+  - ***Integration tests:***  Test the application with external resources.
+  - ***Functional or end-to-end tests:***  Test the application through its UI.
+
+- Tests should not be too general nor too specific. If they’re too general, they don’t give you much confidence that your code works. If they’re too specific, they become fragile and can break easily. As you write code, you have to spend extra unnecessary time to fix these broken tests. 
+- Mocking is replacing a real implementation of a function with a fake or mock function. It allows us to isolate our application code from its external resources. 
+- Popular Jest matcher functions: 
+  -  Equality 
+    ```
+    expect(...).toBe();
+    expect(...).toEqual();
+   ``` 
+  - Truthiness
+  ```
+  expect(...).toBeDefined();
+  expect(...).toBeNull();
+  expect(...).toBeTruthy();
+  expect(...).toBeFalsy();
+  ```
+  - Numbers
+  ```
+    expect(...).toBeGreaterThan();
+    expect(...).toBeGreaterThanOrEqual();
+    expect(...).toBeLessThan();
+    expect(...).toBeLessThanOrEqual();
+    ```
+  - Strings
+  ```
+   expect(...).toMatch(/regularExp/);
+   ```
+  - Arrays
+  ```
+  expect(...).toContain();
+  ```
+  - Objects
+  ```
+  expect(...).toBe(); //check for the equality of object references 
+  expect(...).toEqual(); // check for the equality of properties 
+  expect(...).toMatchObject();
+  ```
+  - Exceptions 
+  ```
+  expect(() => { someCode }).toThrow();
+  ```

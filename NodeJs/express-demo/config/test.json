@@ -1,0 +1,9 @@
+{
+    "name" : "My Express App",
+    "jwtPrivateKey" : "123456",
+    "mail" : {
+        "host" : "prod-mail-service",
+        "password" : "app_password"
+    }
+
+}
