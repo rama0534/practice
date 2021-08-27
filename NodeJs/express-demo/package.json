@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll --verbose --coverage"
   },
   "author": "Rama Nayudu Sadam",
   "license": "ISC",
@@ -27,6 +27,7 @@
     "winston-mongodb": "^5.0.7"
   },
   "devDependencies": {
-    "jest": "^27.0.6"
+    "jest": "^27.0.6",
+    "supertest": "^6.1.6"
   }
 }

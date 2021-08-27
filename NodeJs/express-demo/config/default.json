@@ -4,6 +4,7 @@
     "mail" : {
         "host" : "prod-mail-service",
         "password" : "app_password"
-    }
+    },
+    "db": "mongodb://localhost/playground"
 
 }

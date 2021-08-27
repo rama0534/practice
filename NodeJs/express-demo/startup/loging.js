@@ -1,6 +1,6 @@
 const winston = require('winston');
 require('express-async-errors');
-require('winston-mongodb');
+// require('winston-mongodb');
 
 module.exports = function(){
 
@@ -18,7 +18,7 @@ module.exports = function(){
 
     // winston.add(winston.transports.File, { filename: 'logfile.log'});
     winston.add(new winston.transports.File({ filename: 'logfile.log'}));
-    winston.add(new winston.transports.MongoDB({db: 'mongodb://localhost/playground'} ));
+    // winston.add(new winston.transports.MongoDB({db: 'mongodb://localhost/playground'} ));
     // winston.ExceptionHandler(new winston.transports.File({filename: 'uncaughtException.log'}));
     /* Example of uncaught exception */
     // throw new Error('Something failed during the startup.');
