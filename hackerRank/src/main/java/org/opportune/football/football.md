@@ -84,3 +84,23 @@ returns data associated with matches in the year 2011 where team2 (the visiting 
     ]
 }
 ```
+# 4. League Names.
+- To access league name perform GET request to https://jsonmock.hackerrank.com/api/football_competitions
+- Sample output 
+````
+{
+  "page": 3,
+  "per_page": 10,
+  "total": 35,
+  "total_pages": 4,
+  "data": [
+            {
+              "name": "League 1",
+              "country": "France",
+              "year": 2014,
+              "winner": "Paris Saint-Germain",
+            },
+            .....
+  ]
+}
+````
