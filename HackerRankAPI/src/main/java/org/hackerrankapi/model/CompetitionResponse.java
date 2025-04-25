@@ -12,7 +12,7 @@ import java.util.List;
 public class CompetitionResponse {
     private int page;
     private int per_page;
-    private int total;
+    private long total;
     private int total_pages;
     private List<Competition> data;
 }

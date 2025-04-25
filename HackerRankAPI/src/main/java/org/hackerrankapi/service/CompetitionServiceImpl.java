@@ -28,10 +28,9 @@ public class CompetitionServiceImpl implements ICompetitionService {
         this.restTemplate = restTemplate;
     }
 
-    public List<Competition> getPaginatedCompetitions(int page, int size) {
-        Pageable pageable = PageRequest.of(page, size);
-        Page<Competition> competitions = repository.findAll(pageable);
-        return competitions.getContent();
+    public Page<Competition> getPaginatedCompetitions(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size); 
+        return repository.findAll(pageable);
     }
 
     @Override
