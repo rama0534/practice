@@ -1,0 +1,17 @@
+service:
+  baseurl: https://jsonmock.hackerrank.com/api/football_competitions
+spring:
+  application:
+    name: FOOTBALL-GAMES
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+server:
+  port: 8080
