@@ -1,5 +1,6 @@
 service:
   baseurl: https://jsonmock.hackerrank.com/api/football_competitions
+  local: ${WORKSPACE_PATH}/practice/HackerRankAPI/src/main/resources/test
 spring:
   application:
     name: FOOTBALL-GAMES
@@ -11,7 +12,7 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     show-sql: true
 server:
   port: 8080
