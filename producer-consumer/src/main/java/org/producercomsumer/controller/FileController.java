@@ -1,5 +1,6 @@
 package org.producercomsumer.controller;
 
+import org.producercomsumer.exception.MaxUploadSizeExceededException;
 import org.producercomsumer.model.FileEntity;
 import org.producercomsumer.service.FileService;
 import org.producercomsumer.util.FileQueueManager;
@@ -22,6 +23,9 @@ public class FileController {
     @Value("${service.local}")
     private String LOCAL_PATH ;
 
+    @Value("${service.max_size}")
+    private int MAX_SIZE ;
+
     private final FileService service;
     private final FileQueueManager queueManager;
 
@@ -32,11 +36,18 @@ public class FileController {
 
     @PostMapping("/upload")
     public ResponseEntity<String> upload(@RequestParam MultipartFile file) {
+        long maxSize = (long) MAX_SIZE * 1024 * 1024;
+        if (file.getSize() > maxSize) {
+            throw new MaxUploadSizeExceededException(file.getSize());
+        }
         long id = System.currentTimeMillis() * 1000 + new Random().nextInt(1000);
         try {
             saveFileLocal(id, file);
             return ResponseEntity.ok("File Uploaded");
-        } catch (IOException e) {
+        } catch (MaxUploadSizeExceededException ex) {
+            throw new MaxUploadSizeExceededException(file.getSize());
+        }
+        catch (IOException e) {
             return ResponseEntity.status(500).body("Bad request" + e.getMessage());
         }
     }

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 
 @Service
@@ -33,34 +34,42 @@ public class FileConsumerService {
                 try {
                     String  fileName = queueManager.consume(); // Blocks until available
                     File file = new File(LOCAL_PATH + File.separator + fileName);
-                    System.out.println("test.." + (fileName.substring(0, fileName.lastIndexOf('.'))));
                     long id = Long.parseLong(fileName.substring(0, fileName.lastIndexOf('.')));
-
-                    if (isStable(file)) {
-                        byte[] bytes = Files.readAllBytes(file.toPath());
-                        FileEntity entity = new FileEntity();
-                        entity.setId(id);
-                        entity.setFileName(file.getName());
-                        entity.setFileType(Files.probeContentType(file.toPath()));
-                        entity.setData(bytes);
-                        if (repository.existById(id)) {
-                            service.updateFile(id, entity);
-                        } else {
-                            service.uploadFile(entity);
-                        }
-
-                        file.delete();
-                        System.out.println("File saved to DB and deleted: " + id);
-                    } else {
-                        queueManager.produce(fileName); // retry later
-                        Thread.sleep(10000);
-                    }
+                    saveFileInDB(file, id, fileName);
                 } catch (Exception e) {
-                    e.printStackTrace();
+                   throw new RuntimeException();
                 }
             }
-
         }).start();
+    }
+
+    private void saveFileInDB(File file, long id, String fileName) throws IOException, InterruptedException {
+        try {
+            if (isStable(file)) {
+                if (!file.exists()) {
+                    throw new IllegalArgumentException("File not found");
+                }
+                byte[] bytes = Files.readAllBytes(file.toPath());
+                String fileType = Files.probeContentType(file.toPath());
+                if (fileType == null) fileType = "application/octet-stream";
+                FileEntity entity = new FileEntity();
+                entity.setId(id);
+                entity.setFileName(file.getName());
+                entity.setFileType(fileType);
+                entity.setData(bytes);
+                if (repository.existById(id)) {
+                    service.updateFile(id, entity);
+                } else {
+                    service.uploadFile(entity);
+                }
+            } else {
+                queueManager.produce(fileName); // retry later
+                Thread.sleep(10000);
+            }
+        } finally {
+            file.delete();
+        }
+
     }
 
     private boolean isStable(File file) {

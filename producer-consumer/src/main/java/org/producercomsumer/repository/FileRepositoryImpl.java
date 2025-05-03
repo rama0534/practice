@@ -58,6 +58,11 @@ public class FileRepositoryImpl implements FileRepository {
     @Override
     public boolean existById(Long id) {
         String sql = "SELECT EXISTS (SELECT 1 FROM files WHERE id = ?)";
-        return Boolean.TRUE.equals(jdbcTemplate.queryForObject(sql, Boolean.class, id));
+        try {
+            Boolean exists = jdbcTemplate.queryForObject(sql, Boolean.class, id);
+            return Boolean.TRUE.equals(exists);
+        } catch (Exception ex) {
+            throw new RuntimeException(ex.getMessage());
+        }
     }
 }

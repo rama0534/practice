@@ -18,9 +18,6 @@ public class FileServiceImpl implements FileService {
 
     @Override
     public void uploadFile(FileEntity file) {
-        if (fileRepository.findById(file.getId()).isEmpty()) {
-            throw new FileNotFoundException(file.getId());
-        }
         FileEntity entity = new FileEntity(
                 file.getId(),
                 file.getFileName(),
@@ -43,15 +40,11 @@ public class FileServiceImpl implements FileService {
 
     @Override
     public void updateFile(Long id, FileEntity file) {
-//        if (fileRepository.findById(id).isEmpty()) {
-//            throw new FileNotFoundException(id);
-//        }
         if(fileRepository.existById(id)) {
             fileRepository.updateFile(file);
         } else {
             throw new FileNotFoundException(id);
         }
-
     }
 
     @Override

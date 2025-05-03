@@ -1,8 +1,13 @@
 service:
   local: ${DOWNLOADS}/Temp
+  max_size: ${MAX_SIZE}
 spring:
   application:
     name: producer-consumer
+  servlet:
+    multipart:
+      max-file-size: ${service.max_size}MB
+      max-request-size: ${service.max_size}MB
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
     username: ${postgresUser}
