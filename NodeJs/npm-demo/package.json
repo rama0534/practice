@@ -9,7 +9,7 @@
   "author": "Rama Nayudu Sadam",
   "license": "ISC",
   "dependencies": {
-    "mongoose": "^5.13.3",
+    "mongoose": "^6.13.6",
     "underscore": "^1.13.1"
   }
 }
